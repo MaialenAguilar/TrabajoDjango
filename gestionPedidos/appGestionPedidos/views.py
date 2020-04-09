@@ -11,5 +11,11 @@ def index(request):
 #devuelve los datos de un cliente
 def detalle(request, clientes_id):
 	clientes = Cliente.objects.get(pk=clientes_id)
-	output = ', '.join([str(cliente_id), Cliente.nombre_empresa, str(Cliente.telefono),str(persona_contacto)])
+	output = ', '.join([str(clientes_id), Cliente.nombre_empresa, str(Cliente.telefono), Cliente.persona_contacto])
 	return HttpResponse(output)
+
+# Devuelve el listado de componentes
+def index(request):
+    componentes = Componente.objects.order_by('nombre_componente')
+    output = ', '.join([d.nombre_empresa for d in clientes])
+    return HttpResponse(output)
