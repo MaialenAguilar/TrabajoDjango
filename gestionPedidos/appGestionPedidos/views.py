@@ -1,5 +1,6 @@
 from .models import Cliente, Componente, Categoria, Producto, Pedido
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
+from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
 
 # Devuelve el listado de clientes
@@ -10,8 +11,8 @@ def index(request):
 
 #devuelve los datos de un cliente
 def detalle_cliente(request, clientes_id):
-	clientes = Cliente.objects.get(pk=clientes_id)
-	output = ', '.join([str(clientes_id), Cliente.nombre_empresa, str(Cliente.telefono), Cliente.persona_contacto])
+	clientes = Cliente.objects.get(pk= clientes_id)
+	output = ', '.join([str(clientes_id), clientes.nombre_empresa, str(clientes.telefono), clientes.persona_contacto])
 	return HttpResponse(output)
 
 # Devuelve el listado de componentes
