@@ -251,14 +251,18 @@ p {
 
 /*Estilo para la posición de la columna izquierda*/
 .columna-izquierda {
+	background-color: #cee5ee;
+	box-sizing: border-box;
 	float: left;
-	width: 25%
+	margin-top: 15px;
+	margin-right: 20px;
+	width: 20%
 }
 
 .menu {
 	
 	font-family: "Verdana";
-	margin-left: 0;
+	margin-left: 20px;
 
 }
 /*Estilo de la lista que configura el menú de navegación*/
@@ -268,10 +272,14 @@ ul {
 	padding-left: 0px;
 
 }
+li {
+	border-bottom: 10px, solid, #023560;
+}
 
 a {
 	text-decoration: inherit;/*De esta forma eliminamos el estilo por defecto de los enlaces en html*/
-	color: white;
+	border-bottom: 10px, solid, #023560;
+	color: #023560;
 	font-family: Lato, "sans-serif";
 	font-size: 20px;
 	font-weight: 500;
