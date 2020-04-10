@@ -47,7 +47,7 @@ def productos(request):
 
 #devuelve los datos de cada producto
 def detalle_productos(request, producto_id):
-	producto = Producto.objects.get(pk=producto_id)
+	producto =  Producto.objects.get(pk=producto_id)
 	output = ', '.join([producto.nombre, producto.descripcion, str(producto.precio)])
 	return HttpResponse(output)
 #devuelve los datos de cada pedido
@@ -55,5 +55,5 @@ def detalle_productos(request, producto_id):
 
 def detalle_pedidos(request, pedido_id):
 	pedidos = Pedido.objects.get(pk=pedido_id)
-	output = ', '.join([pedidos.identificador, pedidos.cliente])
+	output = ', '.join([pedidos.identificador, str(pedidos.cliente)])
 	return HttpResponse(output)
