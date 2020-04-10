@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titulo %}Datos Del Cliente{% endblock %}
+
+{% block contenido %}
+<h2>Datos Del Cliente</h2>
+
+{% if cliente %}
+	<ul>
+		<li>
+		    {{ cliente.id }}
+		</li>
+        <li>
+		    {{ cliente.nombre_empresa}}
+		</li>
+        <li>
+		  {{cliente.telefono}}
+
+		</li>
+        <li>
+		     {{cliente.persona_contacto}}
+		</li>
+
+	</ul>
+{% else %}
+    <p>No existe este departamento.</p>
+{% endif %}
+
+{% endblock %}

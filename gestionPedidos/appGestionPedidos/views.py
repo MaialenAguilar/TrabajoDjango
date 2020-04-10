@@ -18,10 +18,12 @@ def clientes(request):
 #devuelve los datos de un cliente
 
 def detalle_cliente(request, cliente_id):
-	cliente = Cliente.objects.get(pk=cliente_id)
-	output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
-
-	return HttpResponse(output)
+    #cliente = get_object_or_404(Cliente.objects.get(pk=cliente_id))
+	#output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
+	#return HttpResponse(output)
+    cliente = get_object_or_404(Cliente, pk=cliente_id)
+    context = {'cliente': cliente}
+    return render(request,'Datos_Cliente.html',context)
 
 # Devuelve el listado de componentes
 def componentes(request):
