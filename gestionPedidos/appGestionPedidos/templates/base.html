@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es"><!--Establecemos idioma castellano por accesibilidad-->
 	<head>
-		<link rel="stylesheet" href="web_styles.css"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
+		<link rel="stylesheet" href="{% static 'CSS/web_styles.css' %}"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
 		<meta name="description" content="Aplicación de Deustronics Components S.L. par la Gestión de Pedidos">
 		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
 	</head>
