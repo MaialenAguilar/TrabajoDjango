@@ -8,9 +8,12 @@ from django.shortcuts import render
 
 # Devuelve el listado de clientes
 def clientes(request):
-    clientes = Cliente.objects.order_by('nombre_empresa')
-    output = ', '.join([d.nombre_empresa for d in clientes])
-    return HttpResponse(output)
+    clientes = get_list_or_404(Cliente.objects.order_by('nombre_empresa'))
+    #output = ', '.join([d.nombre_empresa for d in clientes])
+    #return HttpResponse(output)
+    context = {'lista_clientes': clientes}
+    return render(request,'clientes.html',context)
+
 
 #devuelve los datos de un cliente
 

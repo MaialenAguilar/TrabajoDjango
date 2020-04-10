@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de Clientes{% endblock %}
+
+{% block contenido %}
+<h2>Listado de clientes</h2>
+
+	<ul>
+        {% for d in lista_clientes %}
+		<li>
+		    {{ d.id }}: {{ d.nombre_empresa}}
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
