@@ -74,9 +74,11 @@ footer img {
 /*Definimos tamaño del contenedor principal, el del centro de la página*/
 main {
 	box-sizing: border-box;
-	margin-top: 15px;
-	width: 74%;
 	display: inline-block;
+	margin-top: 35px;
+	text-align: center;
+	width: 74%;
+
 
 }
 
@@ -254,7 +256,7 @@ p {
 	background-color: #cee5ee;
 	box-sizing: border-box;
 	float: left;
-	margin-top: 15px;
+	margin-top: 35px;
 	margin-right: 20px;
 	width: 20%
 }
@@ -337,6 +339,36 @@ table {
 	text-align: center;
 	width: 150px;
 	height: 40px;
+}
+/*Formato para el div que contiene cada categoria */
+.categorias, .categorias-inferior {
+    display: inline-block;
+    margin-right: 35px;
+    text-align: center;
+    width: 15%;
+}
+h5 {
+    color: #cee5ee;
+	font-family: Lato, "sans-serif";
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.categorias-inferior {
+    margin-top: 45px;
+
+}
+button {
+    background-color: #cee5ee;
+    border-radius: 15px;
+    color: #023560;
+    font-family: "Verdana";
+    font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-top: 35px;
 }
 
 
