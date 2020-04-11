@@ -8,7 +8,12 @@
     <ul>
         {% for d in lista_pedidos %}
         <li>
-        {{d.identificador}} : {{ d.fecha_pedido}} : {{d.entregado}}
+               Datos__ ID: -- Fecha pedido: -- Situación:
+        </li>
+        <li>
+            <ul>
+       {{d.identificador}} -- {{ d.fecha_pedido}} --  {{d.entregado}}<li> <a href="/appGestionPedidos/pedidos/{{ d.id }}">Ver Pedido</a></li>
+            </ul>
         </li>
     {% endfor %}
     </ul>
