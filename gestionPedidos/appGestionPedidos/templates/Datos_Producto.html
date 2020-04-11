@@ -8,13 +8,30 @@
 {% if producto %}
     <ul>
         <li>
+           Nombre:
+            <ul>
+              <li>
            {{producto.nombre}}
+             </li>
+            </ul>
         </li>
         <li>
+            Descripción:
+             <ul>
+              <li>
            {{producto.descripcion}}
+             </li>
+            </ul>
+
         </li>
+
         <li>
+           Precio:
+             <ul>
+              <li>
            {{producto.precio}}
+             </li>
+            </ul>
         </li>
     </ul>
 {% else %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<h2>Insertar Producto</h2>
+
+<form action="{% url 'Insertar_Producto' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Insertar producto" />
+</form>
+<a href="{% url 'productos' %}">Volver a la lista</a>
+
+{% endblock %}

@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views import View
-from .forms import PedidoForm
+from .forms import PedidoForm, ProductoForm
 
 # DEVUELVE EL LISTADO DE CLIENTES
 
@@ -191,6 +191,8 @@ class Detalle_PedidosDetailView(DetailView):
         context['Titulo_pagina']= 'Datos del pedido'
         return context
 
+# CREAR FORMULARIO PEDIDO
+
 class CrearPedidoView(View):
     def get(self, request, *args, **kwargs):
         form = PedidoForm()
@@ -219,3 +221,25 @@ class CrearPedidoView(View):
             return redirect('pedidos')
 
         return render(request, 'Crear_Pedido.html', {'form': form})
+
+
+    # CREAR FORMULARIO PRODUCTOS
+
+class CrearProductoView(View):
+    def get(self, request, *args, **kwargs):
+        form = ProductoForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Insertar un producto'
+        }
+        return render(request, 'Insertar_Producto.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            # Volvemos a la lista de productos
+            return redirect('productos')
+
+        return render(request, 'Insertar_Producto.html', {'form': form})
