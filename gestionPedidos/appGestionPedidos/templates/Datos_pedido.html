@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block titulo %} Datos de pedido {% endblock %}
+
+{% block contenido %}
+<h2>Datos del pedido</h2>
+
+{% if pedido %}
+    <ul>
+        <li>
+            {{pedido.identificador}}
+        </li>
+         <li>
+            {{pedido.fecha_pedido}}
+        </li>
+         <li>
+            {{pedido.fecha_entrega}}
+        </li>
+         <li>
+            {{pedido.producto}}
+        </li>
+         <li>
+            {{pedido.cantidad}}
+        </li>
+         <li>
+            {{pedido.cliente}}
+        </li>
+    </ul>
+{% else %}
+    <p>Este pedido no existe</p>
+{% endif %}
+
+{% endblock %}
