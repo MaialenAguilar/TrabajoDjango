@@ -41,7 +41,7 @@ def detalle_componentes(request, componente_id):
 	#return HttpResponse(output)
     componente= get_object_or_404(Componente, pk= componente_id)
     context = {'componente':componente}
-    return render(request, 'Detalle_Componente.html',context)
+    return render(request, 'Datos_Componente.html',context)
 
 # Devuelve el listado de categorias
 def categorias(request):
@@ -53,19 +53,34 @@ def categorias(request):
 
 # Devuelve el listado de productos
 def productos(request):
-    productos = Producto.objects.order_by('nombre')
-    output = ', '.join([d.nombre for d in productos])
-    return HttpResponse(output)
+    productos = get_list_or_404(Producto.objects.order_by('nombre'))
+    #output = ', '.join([d.nombre for d in productos])
+    #return HttpResponse(output)
+    context= {'lista_productos':productos}
+    return render(request, 'productos.html',context)
 
 #devuelve los datos de cada producto
 def detalle_productos(request, producto_id):
-	producto =  Producto.objects.get(pk=producto_id)
-	output = ', '.join([producto.nombre, producto.descripcion, str(producto.precio)])
-	return HttpResponse(output)
+	#producto =  Producto.objects.get(pk=producto_id)
+	#output = ', '.join([producto.nombre, producto.descripcion, str(producto.precio)])
+	#return HttpResponse(output)
+    producto= get_object_or_404(Producto, pk= producto_id)
+    context= {'producto': producto}
+    return render(request, 'datos_producto.html', context)
+
+#devuelve lista de pedidos
+def pedidos(request):
+    pedidos = get_list_or_404(Pedido.objects.order_by('entregado'))
+    #output = ', '.join([d.nombre for d in productos])
+    #return HttpResponse(output)
+    context= {'lista_pedidos':pedidos}
+    return render(request, 'pedidos.html',context)
+
 #devuelve los datos de cada pedido
-
-
 def detalle_pedidos(request, pedido_id):
-	pedidos = Pedido.objects.get(pk=pedido_id)
-	output = ', '.join([pedidos.identificador, str(pedidos.cliente)])
-	return HttpResponse(output)
+	#pedidos = Pedido.objects.get(pk=pedido_id)
+	#output = ', '.join([pedidos.identificador, str(pedidos.cliente)])
+	#return HttpResponse(output)
+    pedidos= get_object_or_404(Pedido,pk=pedido_id)
+    context= {'pedido': pedidos}
+    return render(request, 'Datos_Pedido.html', context)
