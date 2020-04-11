@@ -27,22 +27,29 @@ def detalle_cliente(request, cliente_id):
 
 # Devuelve el listado de componentes
 def componentes(request):
-    componentes = Componente.objects.order_by('nombre')
-    output = ', '.join([d.nombre for d in componentes])
-    return HttpResponse(output)
+    componentes = get_list_or_404(Componente.objects.order_by('nombre'))
+    #output = ', '.join([d.nombre for d in componentes])
+    #return HttpResponse(output)
+    context={'lista_componentes': componentes}
+    return render(request, 'componentes.html' , context)
 
 #devuelve los datos de un componente
 
 def detalle_componentes(request, componente_id):
-	componente = Componente.objects.get(pk=componente_id)
-	output = ', '.join([componente.codigo_referencia, componente.nombre, componente.marca])
-	return HttpResponse(output)
+	#componente = Componente.objects.get(pk=componente_id)
+	#output = ', '.join([componente.codigo_referencia, componente.nombre, componente.marca])
+	#return HttpResponse(output)
+    componente= get_object_or_404(Componente, pk= componente_id)
+    context = {'componente':componente}
+    return render(request, 'Detalle_Componente.html',context)
 
 # Devuelve el listado de categorias
 def categorias(request):
-    categorias = Categoria.objects.order_by('nombre')
-    output = ', '.join([d.nombre for d in categorias])
-    return HttpResponse(output)
+    categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
+    #output = ', '.join([d.nombre for d in categorias])
+    #return HttpResponse(output)
+    context= {'lista_categorias':categorias}
+    return render(request, 'categorias.html',context)
 
 # Devuelve el listado de productos
 def productos(request):
