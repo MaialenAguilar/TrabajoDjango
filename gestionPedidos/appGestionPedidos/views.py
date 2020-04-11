@@ -1,8 +1,10 @@
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from django.views import View
+from .forms import PedidoForm
 
 # DEVUELVE EL LISTADO DE CLIENTES
 
@@ -188,3 +190,32 @@ class Detalle_PedidosDetailView(DetailView):
         context= super(Detalle_PedidosDetailView, self).get_context_data(**kwargs)
         context['Titulo_pagina']= 'Datos del pedido'
         return context
+
+class CrearPedidoView(View):
+    def get(self, request, *args, **kwargs):
+        form = PedidoForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Realizar un pedido'
+        }
+        return render(request, 'Crear_Pedido.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = PedidoForm(request.POST)
+        if form.is_valid():
+            # pedido = Pedido()
+            # pedido.fecha_pedido = form.cleaned_data['fecha_pedido']
+            # pedido.entregado = form.cleaned_data['entregado']
+            # pedido.fecha_entrega = form.cleaned_data['fecha_entrega']
+            # pedido.cliente = form.cleaned_data['cliente']
+            # pedido.cantidad = form.cleaned_data['cantidad']
+            # pedido.iva = form.cleaned_data['iva']
+            # pedido.precio_total = form.cleaned_data['precio_total']
+            # pedido.save()
+
+            form.save()
+
+            # Volvemos a la lista de noticias
+            return redirect('pedidos')
+
+        return render(request, 'Crear_Pedido.html', {'form': form})
