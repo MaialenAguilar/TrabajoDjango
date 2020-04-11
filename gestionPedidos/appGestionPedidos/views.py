@@ -1,18 +1,24 @@
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
-
-
 from django.shortcuts import render
-
+from django.views.generic import ListView
 
 # Devuelve el listado de clientes
-def clientes(request):
-    clientes = get_list_or_404(Cliente.objects.order_by('nombre_empresa'))
-    #output = ', '.join([d.nombre_empresa for d in clientes])
-    #return HttpResponse(output)
-    context = {'lista_clientes': clientes}
-    return render(request,'clientes.html',context)
+#def clientes(request):
+   #clientes = get_list_or_404(Cliente.objects.order_by('nombre_empresa'))
+   #context = {'lista_clientes': clientes}
+   #return render(request,'clientes.html',context)
+class ClientesListView(ListView):
+    model=Cliente
+    template_name ='clientes.html'
+    queryset=Cliente.objects.order_by('nombre_empresa')
+    context_object_name='lista_clientes'
+
+    def get_context_data(self, **kwargs):
+        context= super(ClientesListView, self).get_context_data(**kwargs)
+        context ['Titulo_pagina']='Listado de clientes'
+        return context
 
 
 #devuelve los datos de un cliente
