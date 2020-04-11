@@ -5,11 +5,19 @@
 {% block contenido %}
 <h2>Listado de clientes</h2>
 
-	<ul>
-        {% for d in lista_clientes %}
-		<li>
-		    {{ d.id }}: {{ d.nombre_empresa}}
-		</li>
-	{% endfor %}
-	</ul>
+	<table>
+		 {% for d in lista_clientes %}
+		<tr>
+			<td >ID</td>
+			<td >Nombre de la empresa</td>
+			<td >---</td>
+		</tr>
+		<tr>
+			<td > {{ d.id }}</td>
+			<td >{{ d.nombre_empresa}}</td>
+			<td ><a href="/appGestionPedidos/clientes/{{ d.id }}">Mostrar Cliente</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
 {% endblock %}
