@@ -2,7 +2,7 @@ from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Devuelve el listado de clientes
 #def clientes(request):
@@ -21,15 +21,25 @@ class ClientesListView(ListView):
         return context
 
 
-#devuelve los datos de un cliente
+#DEVUELVE DATOS DE UN CLIENTE
 
-def detalle_cliente(request, cliente_id):
-    #cliente = get_object_or_404(Cliente.objects.get(pk=cliente_id))
+#cliente = get_object_or_404(Cliente.objects.get(pk=cliente_id))
 	#output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
 	#return HttpResponse(output)
-    cliente = get_object_or_404(Cliente, pk=cliente_id)
-    context = {'cliente': cliente}
-    return render(request,'Datos_Cliente.html',context)
+
+#def detalle_cliente(request, cliente_id):
+
+   #cliente = get_object_or_404(Cliente, pk=cliente_id)
+   #context = {'cliente': cliente}
+   #return render(request,'Datos_Cliente.html',context)
+class Detalle_ClienteDetailView(DetailView):
+    model = Cliente
+    template_name ='Datos_Cliente.html'
+
+    def get_context_data(self, **kwargs):
+        context= super(Detalle_ClienteDetailView, self).get_context_data(**kwargs)
+        context['Titulo_pagina']='Datos de cliente'
+        return context
 
 # Devuelve el listado de componentes
 def componentes(request):
