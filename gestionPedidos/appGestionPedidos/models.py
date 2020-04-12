@@ -12,13 +12,22 @@ class Cliente(models.Model):
     email = models.EmailField()
     persona_contacto = models.CharField(max_length=120)
 
+    def __str__(self):
+        return f'{self.nombre_empresa}'
+
+
 class Componente(models.Model):
     codigo_referencia = models.CharField(max_length=10)
     nombre = models.CharField(max_length=120)
     marca = models.CharField(max_length=80)
 
+    def __str__(self):
+        return f'{self.codigo_referencia}--> {self.nombre}'
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=60)
+    def __str__(self):
+        return f'{self.nombre}'
 
 class Producto(models.Model):
     referencia = models.CharField(max_length=10)
@@ -27,6 +36,9 @@ class Producto(models.Model):
     descripcion = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     componentes = models.ManyToManyField(Componente)
+
+    def __str__(self):
+        return f'{self.nombre}--> {self.categoria}'
 
 class Pedido(models.Model):
     identificador = models.CharField(max_length=10)
@@ -39,6 +51,8 @@ class Pedido(models.Model):
     base_imponible = models.FloatField()
     iva = models.IntegerField(default=21)
     precio_total = models.FloatField()
+
+
 
     
 

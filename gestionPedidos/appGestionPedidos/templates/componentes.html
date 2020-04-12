@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de Componentes{% endblock %}
+
+{% block contenido %}
+<h2>Listado de componentes</h2>
+
+	<ul>
+        {% for d in lista_componentes %}
+		<li>
+		    {{ d.id }}: {{ d.nombre}}
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

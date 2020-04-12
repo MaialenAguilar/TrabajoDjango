@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block titulo %} Datos del Producto {% endblock %}
+
+{% block contenido %}
+<h2>Datos del producto</h2>
+
+{% if producto %}
+    <ul>
+        <li>
+           Nombre:
+            <ul>
+              <li>
+           {{producto.nombre}}
+             </li>
+            </ul>
+        </li>
+        <li>
+            Descripción:
+             <ul>
+              <li>
+           {{producto.descripcion}}
+             </li>
+            </ul>
+
+        </li>
+
+        <li>
+           Precio:
+             <ul>
+              <li>
+           {{producto.precio}}
+             </li>
+            </ul>
+        </li>
+    </ul>
+{% else %}
+        <p>No existe este producto</p>
+{% endif %}
+
+{% endblock %}
