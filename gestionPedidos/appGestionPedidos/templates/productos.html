@@ -2,31 +2,30 @@
 
 {% block titulo %}Listado de Productos {% endblock %}
 
-{% block contenido %}
+{% block main %}
 <h2>Listado de productos</h2>
 
-{% for d in lista_productos %}
 <table>
-
 		<thead>
 		<tr>
 			<th >Productos</th>
 		</tr>
 		</thead>
 
-		<tbody>
+
 		<tr>
 			<td >Referencia</td>
 			<td >Nombre</td>
 			<td >Categoria</td>
 		</tr>
+		{% for d in lista_productos %}
         <tr>
 			<td> {{d.referencia}}</td>
 			<td> {{ d.nombre}} </td>
 			<td>{{d.categoria}}</td>
 			<td><a href="/appGestionPedidos/productos/{{ d.id }}">Ver</a></td>
 		</tr>
-        </tbody>
+
     {% endfor %}
 </table>
 {% endblock %}

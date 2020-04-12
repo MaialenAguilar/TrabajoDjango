@@ -39,6 +39,7 @@ class ClientesListView(ListView):
     #cliente = get_object_or_404(Cliente, pk=cliente_id)
     #context = {'cliente': cliente}
     #return render(request,'Datos_Cliente.html',context)
+<<<<<<< HEAD
 
 #def detalle_cliente(request, cliente_id):
 	#cliente = Cliente.objects.get(pk=cliente_id)
@@ -88,10 +89,13 @@ def detalle_pedidos(request, pedido_id):
 	return HttpResponse(output)
 
 #def detalle_cliente(request, cliente_id):
+=======
+>>>>>>> master
 
-   #cliente = get_object_or_404(Cliente, pk=cliente_id)
-   #context = {'cliente': cliente}
-   #return render(request,'Datos_Cliente.html',context)
+#def detalle_cliente(request, cliente_id):
+	#cliente = Cliente.objects.get(pk=cliente_id)
+	#output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
+	#return HttpResponse(output)
 
 class Detalle_ClienteDetailView(DetailView):
     model = Cliente

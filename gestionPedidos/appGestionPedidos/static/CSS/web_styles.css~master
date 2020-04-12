@@ -1,0 +1,374 @@
+/*Definimos color de fondo de la pantalla y anchura máxima de la misma*/
+body {
+	background-color: #023560;
+	max-width: 1100px;
+	margin: 0 auto;
+	display: inline-block;
+}
+/*Fijamos estilo para la cabecera*/
+header {
+	background-color: white;
+	height: 120px;
+	margin-top: 0;
+	max-width: 100%;
+}
+/*Definimos el estilo de los elementos que componen la cabecera*/
+h1 {
+	color: #cee5ee;
+	display: inline-block;
+	font-family: Lato, "sans-serif";
+	font-size: 50px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 22px;
+	margin-top: 0;
+	padding-left: 80px;
+	padding-top: 37px;
+	vertical-align: bottom;
+}
+#logo {
+	display: inline-block;
+	padding-left: 20px;
+	vertical-align: bottom;
+}
+.login {
+	display: inline;
+	margin-left: 80px;
+	vertical-align: text-bottom;
+}
+/*Estilo para el enlace "identificate"*/
+.login  a {
+	color: #023560;
+	font-family: Lato, "sans-serif";
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-decoration: none;
+	vertical-align: middle;
+
+}
+/*Definimos el estilo de los elementos que componen el pie de página*/
+footer {
+	background-color: white;
+	clear: all;
+	color: #023560;
+	font-family: Lato, "sans-serif";
+	font-weight: 500;
+	font-size: 18px;
+	height: 80px;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	margin-top: 15px;
+	max-width: 100%;
+	padding-left: 15px;
+
+}
+footer img {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.contacto {
+	margin-right: 20px;
+	margin-top: 50px;
+	float:right;
+}
+/*Definimos tamaño del contenedor principal, el del centro de la página*/
+main {
+    background-color: #cee5ee;
+	box-sizing: border-box;
+	display: inline-block;
+	margin-top: 35px;
+	text-align: center;
+	width: 74%;
+
+
+}
+
+/*Definimos el estilo general del formulario de registro*/
+.form-registro {
+	background-color: #cee5ee;
+	box-sizing: border-box;
+	font-family: "Verdana";
+	margin-top: 20px;
+	margin-left: 11px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 100%;
+}
+/*Estilo de los títulos del formulario de registro*/
+.titulos {
+	background-color: #023560;
+	color: white;
+	padding: 10px;
+	margin-left: 15px;
+	}
+/*Cada línea del formulario está formada por un label y un input*/
+.formulario {
+	line-height: 40px;
+}
+.campos {
+	float: left;
+	width: 35%;
+
+}
+.usuario, .bancarios, .enviar-registro {
+	margin-left: 50px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+/*Eliminamos la línea del fieldset*/
+fieldset {
+	border: 0;
+}
+ .prueba {
+	border-radius: 6px;
+	height: 20px;
+	margin-left: 30px;
+	width: 200px;
+	
+}
+/*Estilo para los radio-buttons*/
+.radio {
+	width: 20px;
+	margin-left: 30px;
+}
+/*Estilo para el enlace de condiciones de servicio*/
+.formulario a {
+	color: #023560;
+	text-decoration: underline;
+}
+
+/*Estilo para el botón de envío del formulario de registro*/
+ .boton {
+	background-color: #023560;
+	border-radius: 10px;
+	color: white;
+	font-size: 20px;
+	margin-left: 240px;
+	text-align: center;
+	width: 150px;
+	height: 40px;
+}
+/*Estilo general para el formulario de login*/
+.form-login {
+	background-color: #cee5ee;
+	border-radius: 20px;
+	font-family: "Verdana";
+	margin-top: 150px;
+	margin-bottom: 150px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 400px;
+
+}
+/*Estilo para las líneas del título del formulario de login*/
+hr {
+	color: #023560;
+	display: inline-block;
+	width: 30%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+/*Estilo para el título del formulario de login*/
+.form-login label {
+	color: #023560;
+	display: inline-block;
+	width: 36%;
+	text-align: center;
+}
+/*Estilo para los campos de entrada del formulario de login*/
+.form-login input {
+	background-color: #cee5ee;
+	border: none;/*De esta forma quitamos el rectángulo por defecto de los input*/
+	border-bottom: 1px solid #023560;/*Y así conseguimos una línea en la parte inferior*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 70%;
+
+}
+.form-login p {
+	color: #023560;
+	display: block;
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+
+}
+/*Estilo para el enlace de registro*/
+p a {
+	color: #023560;
+	font-size: 14px;
+	text-decoration: underline;
+}
+/*Estilo para el botón de login*/
+#boton-login {
+	background-color: #023560;
+	border-radius: 10px;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	height: 40px;
+	width: 70%
+
+}
+/*Estilo general para los bloques denominados "articulo"*/
+.articulo{
+	background-color: #cee5ee;
+	box-sizing: border-box;
+	margin-left: 12px;
+	padding-bottom: 15px;
+	width: 100%;
+
+}
+
+
+h2, h2 a {
+	
+	color: #cee5ee;
+	font-family: Lato, "sans-serif";
+	font-weight: 500;
+	font-size: 22px;
+	letter-spacing: 1px;
+	padding-top: 15px;
+}
+h2 {
+	margin: 20px;
+}
+p {
+	color: #023560;
+	font-family: Lato, "sans-serif";
+	font-weight: 500;
+	font-size: 20px;
+	padding-bottom: 15px;
+	margin-right: 15px;
+	margin-left: 20px;
+	text-align: justify;
+}
+
+/*Estilo para la posición de la columna izquierda*/
+.columna-izquierda {
+	background-color: #cee5ee;
+	box-sizing: border-box;
+	float: left;
+	margin-top: 35px;
+	margin-right: 20px;
+	width: 20%
+}
+
+.menu {
+	
+	font-family: "Verdana";
+	margin-left: 20px;
+
+}
+/*Estilo de la lista que configura el menú de navegación*/
+ul {
+	list-style: none;/*Así quitamos el puntito que aparece por defecto delante de cada línea de una lista*/
+	padding-top: 15px;
+	padding-left: 0px;
+
+}
+li {
+	border-bottom: 10px, solid, #023560;
+}
+
+a {
+	text-decoration: inherit;/*De esta forma eliminamos el estilo por defecto de los enlaces en html*/
+	border-bottom: 10px, solid, #023560;
+	color: #023560;
+	font-family: Lato, "sans-serif";
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 50px;
+
+}
+/*Utlizamos una pseudoclase para definir el estilo de los enlaces sólo cuando pasamos el ratón por encima*/
+a:hover {
+	background-color: red;
+}
+h3 {
+	color: #cee5ee;
+	display: inline-block;
+	font-family: Lato, "sans-serif";
+	font-size: 25px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-left: 50px;
+
+}
+.imagen-juegos {
+	box-sizing: border-box;
+	float: left;
+	margin-top: 30px;
+	margin-right: 10px;
+	width: 41%;
+	
+}
+/*Definimos el estilo para el contenedor de la tabla*/
+.tabla {
+	background-color: #cee5ee;
+	box-sizing: border-box;
+	margin-top: 30px;
+	width: 100%;
+	
+}
+/*Estilo general para la tabla*/
+
+
+.boton-jugar {
+	background-color: #cee5ee;
+	border-radius: 10px;
+	color: #023560;
+	font-size: 20px;
+	margin-left: 240px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-align: center;
+	width: 150px;
+	height: 40px;
+}
+/*Formato para el div que contiene cada categoria */
+.categorias, .categorias-inferior {
+    display: inline-block;
+    margin-right: 35px;
+    text-align: center;
+    width: 15%;
+}
+h5 {
+    color: #cee5ee;
+	font-family: Lato, "sans-serif";
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.categorias-inferior {
+    margin-top: 45px;
+
+}
+button {
+    background-color: #cee5ee;
+    border-radius: 15px;
+    color: #023560;
+    font-family: "Verdana";
+    font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-top: 35px;
+}
+.clientes {
+    background-color: #33FFDA;
+}
+.datos_cliente {
+    background-color: red;
+}

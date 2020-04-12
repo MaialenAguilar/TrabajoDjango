@@ -28,11 +28,11 @@
 			<div class="menu">
 				<!--El menú de navegación lo configuramos como una lista-->
 				<ul>
-					<li><a href="Aplicacion_Web.html">HOME</a></li>
-					<li><a href="Registro.html">CLIENTES</a></li>
-					<li><a href="Registro.html">CATALOGO</a></li>
-					<li><a href="Registro.html">COMPONENTES</a></li>
-					<li><a href="Jugar_Partida.html">PEDIDOS</a></li>
+					<li><a href="{% url 'pedidos' %}">HOME</a></li>
+					<li><a href="{% url 'clientes' %}">CLIENTES</a></li>
+					<li><a href="{% url 'categorias' %}">CATALOGO</a></li>
+					<li><a href="{% url 'componentes' %}">COMPONENTES</a></li>
+					<li><a href="{% url 'pedidos' %}">PEDIDOS</a></li>
 				</ul>
 			</div>
 		</div>
