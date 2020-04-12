@@ -1,6 +1,10 @@
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
+
+from django.views.generic import DetailView, ListView
+from django.shortcuts import render
+
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views import View
@@ -13,15 +17,16 @@ from .forms import PedidoForm, ProductoForm
    #context = {'lista_clientes': clientes}
    #return render(request,'clientes.html',context)
 
+
 class ClientesListView(ListView):
-    model=Cliente
-    template_name ='clientes.html'
-    queryset=Cliente.objects.order_by('nombre_empresa')
-    context_object_name='lista_clientes'
+    model = Cliente
+    template_name = 'clientes.html'
+    queryset = Cliente.objects.order_by('nombre_empresa')
+    context_object_name = 'lista_clientes'
 
     def get_context_data(self, **kwargs):
-        context= super(ClientesListView, self).get_context_data(**kwargs)
-        context ['Titulo_pagina']='Listado de clientes'
+        context = super(ClientesListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina']='Listado de clientes'
         return context
 
 
@@ -31,11 +36,14 @@ class ClientesListView(ListView):
 	#output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
 	#return HttpResponse(output)
 
-#def detalle_cliente(request, cliente_id):
+    #cliente = get_object_or_404(Cliente, pk=cliente_id)
+    #context = {'cliente': cliente}
+    #return render(request,'Datos_Cliente.html',context)
 
-   #cliente = get_object_or_404(Cliente, pk=cliente_id)
-   #context = {'cliente': cliente}
-   #return render(request,'Datos_Cliente.html',context)
+#def detalle_cliente(request, cliente_id):
+	#cliente = Cliente.objects.get(pk=cliente_id)
+	#output = ', '.join([str(cliente.id) , cliente.nombre_empresa, str(cliente.telefono), cliente.persona_contacto])
+	#return HttpResponse(output)
 
 class Detalle_ClienteDetailView(DetailView):
     model = Cliente
@@ -52,19 +60,20 @@ class Detalle_ClienteDetailView(DetailView):
     #return HttpResponse(output)
 
 #def componentes(request):
-   #componentes = get_list_or_404(Componente.objects.order_by('nombre'))
-   #context={'lista_componentes': componentes}
-   #return render(request, 'componentes.html' , context)
+   # componentes = get_list_or_404(Componente.objects.order_by('nombre'))
+   # context={'lista_componentes': componentes}
+   # return render(request, 'componentes.html' , context)
 
 class ComponentesListView(ListView):
+
     model = Componente
     template_name = 'componentes.html'
     queryset = Componente.objects.order_by('nombre')
     context_object_name ='lista_componentes'
 
     def get_context_data(self, **kwargs):
-        context= super(ComponentesListView, self).get_context_data(**kwargs)
-        context ['Titulo_pagina']='Listado de componentes'
+        context = super(ComponentesListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina']='Listado de componentes'
         return context
 
 
@@ -80,6 +89,7 @@ class ComponentesListView(ListView):
     #return render(request, 'Datos_Componente.html',context)
 
 class Detalle_CompoentesDetailView(DetailView):
+
     model = Componente
     template_name = 'Datos_Componente.html'
 
@@ -99,12 +109,14 @@ class Detalle_CompoentesDetailView(DetailView):
     #return render(request, 'categorias.html',context)
 
 class CategoriasListView(ListView):
+
     model = Categoria
     template_name ='categorias.html'
     queryset = Categoria.objects.order_by('nombre')
     context_object_name ='lista_categorias'
 
     def get_context_data(self, **kwargs):
+
         context= super(CategoriasListView, self).get_context_data(**kwargs)
         context['Titulo_pagina']='Listado de categorias'
         return context
@@ -120,12 +132,14 @@ class CategoriasListView(ListView):
     #return render(request, 'productos.html',context)
 
 class ProductosListView(ListView):
+
     model = Producto
     template_name ='productos.html'
     queryset = Producto.objects.order_by('nombre')
     context_object_name ='lista_productos'
 
     def get_context_data(self, **kwargs):
+
         context= super(ProductosListView, self).get_context_data(**kwargs)
         context['Titulo_pagina']='Listado de productos'
         return context
@@ -142,12 +156,14 @@ class ProductosListView(ListView):
     #return render(request, 'datos_producto.html', context)
 
 class Detalle_ProductosDetailView(DetailView):
+
     model = Producto
     template_name = 'Datos_Producto.html'
 
     def get_context_data(self, **kwargs):
-        context= super(Detalle_ProductosDetailView, self).get_context_data(**kwargs)
-        context['Titulo_pagina']= 'Datos del producto'
+
+        context = super(Detalle_ProductosDetailView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Datos del producto'
         return context
 
 #DEVUELVE LISTA DE PEDIDOS
@@ -161,12 +177,14 @@ class Detalle_ProductosDetailView(DetailView):
     #return render(request, 'pedidos.html',context)
 
 class PedidosListView(ListView):
+
     model = Pedido
     template_name ='pedidos.html'
     queryset = Pedido.objects.order_by('entregado')
     context_object_name ='lista_pedidos'
 
     def get_context_data(self, **kwargs):
+
         context= super(PedidosListView, self).get_context_data(**kwargs)
         context['Titulo_pagina']='Listado de pedidos'
         return context
@@ -183,17 +201,20 @@ class PedidosListView(ListView):
     #return render(request, 'Datos_Pedido.html', context)
 
 class Detalle_PedidosDetailView(DetailView):
+
     model = Pedido
     template_name = 'Datos_Pedido.html'
 
     def get_context_data(self, **kwargs):
-        context= super(Detalle_PedidosDetailView, self).get_context_data(**kwargs)
+
+        context = super(Detalle_PedidosDetailView, self).get_context_data(**kwargs)
         context['Titulo_pagina']= 'Datos del pedido'
         return context
 
 # CREAR FORMULARIO PEDIDO
 
 class CrearPedidoView(View):
+
     def get(self, request, *args, **kwargs):
         form = PedidoForm()
         context = {
@@ -243,3 +264,4 @@ class CrearProductoView(View):
             return redirect('productos')
 
         return render(request, 'Insertar_Producto.html', {'form': form})
+

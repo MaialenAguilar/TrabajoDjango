@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es"><!--Establecemos idioma castellano por accesibilidad-->
 	<head>
-		<link rel="stylesheet" href="web_styles.css"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
+		<link rel="stylesheet" href="{% static 'CSS/web_styles.css' %}"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
 		<meta name="description" content="Aplicación de Deustronics Components S.L. par la Gestión de Pedidos">
 		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
 	</head>
@@ -16,22 +17,22 @@
 			</div>
 		</header>
 		<!--Definimos un espacio principal, en el centro, común para toda la aplicación-->
-		<div class="main">
+		<main>
 			<!--En esta página, el main se va a dividir en bloques que son artículos-->
-			{% block contenido %}
+			{% block main %}
             {% endblock %}
 
-		</div>
+		</main>
 		<!--Definimos una columna que irá colocada a la izquierda, en la que situaremos el menú de navegación en todas las páginas-->
 		<div class="columna-izquierda">
 			<div class="menu">
 				<!--El menú de navegación lo configuramos como una lista-->
 				<ul>
-					<li><a href="Aplicacion_Web.html">HOME</a></li>
-					<li><a href="Registro.html">CLIENTES</a></li>
-					<li><a href="Registro.html">CATALOGO</a></li>
-					<li><a href="Registro.html">COMPONENTES</a></li>
-					<li><a href="Jugar_Partida.html">PEDIDOS</a></li>
+					<li><a href="{% url 'pedidos' %}">HOME</a></li>
+					<li><a href="{% url 'clientes' %}">CLIENTES</a></li>
+					<li><a href="{% url 'categorias' %}">CATALOGO</a></li>
+					<li><a href="{% url 'componentes' %}">COMPONENTES</a></li>
+					<li><a href="{% url 'pedidos' %}">PEDIDOS</a></li>
 				</ul>
 			</div>
 		</div>

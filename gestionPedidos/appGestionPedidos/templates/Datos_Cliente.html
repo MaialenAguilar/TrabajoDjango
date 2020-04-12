@@ -2,28 +2,38 @@
 
 {% block titulo %}Datos Del Cliente{% endblock %}
 
-{% block contenido %}
+{% block main %}
 <h2>Datos Del Cliente</h2>
 
 {% if cliente %}
-	<ul>
-		<li>
-		    {{ cliente.id }}
-		</li>
-        <li>
-		    {{ cliente.nombre_empresa}}
-		</li>
-        <li>
-		  {{cliente.telefono}}
+<ul class="datos_cliente">
+	<li>
+		ID : {{ cliente.id }}
+	</li>
+	<li>
+		Empresa : {{ cliente.nombre_empresa}}
+	</li>
+	<li>
+		Telefono : {{cliente.telefono}}
+	</li>
+	<li>
+		Persona contacto : {{cliente.persona_contacto}}
+	</li>
+	<li>
+		C/ {{ cliente.direccion }}
+	</li>
+	<li>
+		C.P. ({{ cliente.codigo_postal}})
+	</li>
+	<li>
+		{{cliente.Localidad}} : ({{cliente.Provincia}})
+	</li>
+	<li>
+		Email : {{cliente.email}}
+	</li>
 
-		</li>
-        <li>
-		     {{cliente.persona_contacto}}
-		</li>
-
-	</ul>
-{% else %}
-    <p>No existe este departamento.</p>
-{% endif %}
-
+</ul>
+	{% else %}
+		<p>No existe este departamento.</p>
+	{% endif %}
 {% endblock %}
