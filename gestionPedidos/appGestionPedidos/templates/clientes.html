@@ -1,16 +1,18 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block titulo %}Listado de Clientes{% endblock %}
 
-{% block contenido %}
+{% block main %}
 <h2>Listado de clientes</h2>
 
-	<table>
-		 {% for d in lista_clientes %}
+	<div class = "tabla">
+	<table class = "clientes">
+
 		<tr>
 			<td >ID</td>
 			<td >Nombre de la empresa</td>
 		</tr>
+		{% for d in lista_clientes %}
 		<tr>
 			<td > {{ d.id }}</td>
 			<td >{{ d.nombre_empresa}}</td>
@@ -18,5 +20,5 @@
 		</tr>
 		{% endfor %}
 	</table>
-
+	</div>
 {% endblock %}
