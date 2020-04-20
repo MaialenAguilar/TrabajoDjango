@@ -1,5 +1,3 @@
-#Estamos del gitKraken de Natxo hasta los mismisimos cojones
-
 
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
