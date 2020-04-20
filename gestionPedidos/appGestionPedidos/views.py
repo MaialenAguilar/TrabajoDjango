@@ -10,6 +10,10 @@ from django.views.generic import ListView, DetailView
 from django.views import View
 from .forms import PedidoForm, ProductoForm
 
+#DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
+
+def home(request):
+    return render(request, 'home.html')
 
 # DEVUELVE EL LISTADO DE CLIENTES
 
