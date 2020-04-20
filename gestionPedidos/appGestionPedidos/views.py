@@ -1,3 +1,6 @@
+#Estamos del gitKraken de Natxo hasta los mismisimos cojones
+
+
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
