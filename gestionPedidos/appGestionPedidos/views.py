@@ -84,16 +84,29 @@ class Detalle_CompoentesDetailView(DetailView):
 def categorias(request):
     return render(request, 'categorias.html')
 
-# DEVUELVE EL LISTADO DE PRODUCTOS
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA CONECTORES
 
 class ConectoresListView(ListView):
     model = Producto
     template_name = 'conectores.html'
-    queryset = Producto.objects.filter(categoria='conectores')
+    queryset = Producto.objects.filter(categoria__nombre='Conectores')
     context_object_name = 'lista_conectores'
 
     def get_context_data(self, **kwargs):
         context = super(ConectoresListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA MODULOS
+
+class ModulosListView(ListView):
+    model = Producto
+    template_name = 'modulos.html'
+    queryset = Producto.objects.filter(categoria__nombre='Conectores')
+    context_object_name = 'lista_modulos'
+
+    def get_context_data(self, **kwargs):
+        context = super(ModulosListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 
@@ -108,6 +121,116 @@ class Detalle_ProductosDetailView(DetailView):
         context = super(Detalle_ProductosDetailView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Datos del producto'
         return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA ILUMINACION
+
+class IluminacionListView(ListView):
+    model = Producto
+    template_name = 'iluminacion.html'
+    queryset = Producto.objects.filter(categoria__nombre='Iluminacion')
+    context_object_name = 'lista_iluminacion'
+
+    def get_context_data(self, **kwargs):
+        context = super(IluminacionListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA OCIO
+
+class OcioListView(ListView):
+    model = Producto
+    template_name = 'ocio.html'
+    queryset = Producto.objects.filter(categoria__nombre='Ocio')
+    context_object_name = 'lista_ocio'
+
+    def get_context_data(self, **kwargs):
+        context = super(OcioListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA ENERGIA
+
+class EnergiaListView(ListView):
+    model = Producto
+    template_name = 'energia.html'
+    queryset = Producto.objects.filter(categoria__nombre='Energia')
+    context_object_name = 'lista_energia'
+
+    def get_context_data(self, **kwargs):
+        context = super(EnergiaListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA SEGURIDAD
+
+class SeguridadListView(ListView):
+    model = Producto
+    template_name = 'seguridad.html'
+    queryset = Producto.objects.filter(categoria__nombre='Seguridad')
+    context_object_name = 'lista_seguridad'
+
+    def get_context_data(self, **kwargs):
+        context = super(SeguridadListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA LUZ Y SONIDO
+
+class SonidoListView(ListView):
+    model = Producto
+    template_name = 'sonido.html'
+    queryset = Producto.objects.filter(categoria__nombre='Luz y Sonido')
+    context_object_name = 'lista_sonido'
+
+    def get_context_data(self, **kwargs):
+        context = super(SonidoListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA MULTIMEDIA
+
+class MultimediaListView(ListView):
+    model = Producto
+    template_name = 'multimedia.html'
+    queryset = Producto.objects.filter(categoria__nombre='Multimedia')
+    context_object_name = 'lista_multimedia'
+
+    def get_context_data(self, **kwargs):
+        context = super(MultimediaListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA HOGAR
+
+class HogarListView(ListView):
+    model = Producto
+    template_name = 'hogar.html'
+    queryset = Producto.objects.filter(categoria__nombre='Hogar')
+    context_object_name = 'lista_hogar'
+
+    def get_context_data(self, **kwargs):
+        context = super(HogarListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+# DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA AUTOMOVIL
+
+class AutomovilListView(ListView):
+    model = Producto
+    template_name = 'automovil.html'
+    queryset = Producto.objects.filter(categoria__nombre='Conectores')
+    context_object_name = 'lista_automovil'
+
+    def get_context_data(self, **kwargs):
+        context = super(AutomovilListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
+        return context
+
+
+
+
+
+
 
 
 # DEVUELVE LISTA DE PEDIDOS

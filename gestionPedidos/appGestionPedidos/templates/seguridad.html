@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de Productos {% endblock %}
+
+{% block main %}
+<h2>SEGURIDAD</h2>
+
+<table>
+		<thead>
+		<tr>
+			<th ></th>
+		</tr>
+		</thead>
+
+
+		<tr>
+			<td >Referencia</td>
+			<td >Nombre</td>
+			<td >Precio</td>
+		</tr>
+		{% for d in lista_seguridad %}
+        <tr>
+			<td> {{d.referencia}}</td>
+			<td> {{ d.nombre}} </td>
+			<td>{{d.precio}}</td>
+			<td><a href="/appGestionPedidos/productos/{{ d.id }}">Ver</a></td>
+		</tr>
+
+    {% endfor %}
+</table>
+{% endblock %}
