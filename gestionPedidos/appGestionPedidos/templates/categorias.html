@@ -47,10 +47,9 @@
                 <h4>AUTOMOVIL</h4>
 				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Auto.png' %}" width="80px" height="80px" alt="Imagen de conectores">
             </div>
-			<button name="boton">Añadir Producto</button>
+			<a href="{% url 'Insertar_Producto' %}"><button name="boton">Añadir Producto</button> </a>
 
-<<<<<<< Updated upstream
-=======
+
 	<ul>
         {% for d in lista_categorias %}
 		<li>
@@ -58,6 +57,6 @@
 		</li>
 	{% endfor %}
 	</ul>
-	<a href="{% url 'Insertar_Producto' %}"><input type="button" value="Insertar producto"></a>
->>>>>>> Stashed changes
+
+
 {% endblock %}
