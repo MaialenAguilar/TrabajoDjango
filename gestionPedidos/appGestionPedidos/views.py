@@ -70,17 +70,19 @@ class Detalle_CompoentesDetailView(DetailView):
 
 # DEVUELVE EL LISTADO DE CATEGORIAS
 
-class CategoriasListView(ListView):
-    model = Categoria
-    template_name = 'categorias.html'
-    queryset = Categoria.objects.order_by('nombre')
-    context_object_name = 'lista_categorias'
+#class CategoriasListView(ListView):
+#    model = Categoria
+#   template_name = 'categorias.html'
+#   queryset = Categoria.objects.order_by('nombre')
+#    context_object_name = 'lista_categorias'
 
-    def get_context_data(self, **kwargs):
-        context = super(CategoriasListView, self).get_context_data(**kwargs)
-        context['Titulo_pagina'] = 'Listado de categorias'
-        return context
+#    def get_context_data(self, **kwargs):
+#        context = super(CategoriasListView, self).get_context_data(**kwargs)
+#        context['Titulo_pagina'] = 'Listado de categorias'
+#        return context
 
+def categorias(request):
+    return render(request, 'categorias.html')
 
 # DEVUELVE EL LISTADO DE PRODUCTOS
 

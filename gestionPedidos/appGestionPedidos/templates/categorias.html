@@ -1,15 +1,52 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block titulo %}Listado de categorias{% endblock %}
 
 {% block main %}
 <h2>Listado de categorias</h2>
+<!--En esta página, el main va a mostrar iconos con todas las categorías-->
+            <div class="categorias">
+                <h4>CONECTORES</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-conectores.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias">
+                <h4>KIT Y MODULOS</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Modulos.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias">
+                <h4>ILUMINACION</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-iluminac.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias">
+                <h4>OCIO</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-ocio.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias">
+                <h4>ENERGIA</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Energ.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
 
-	<ul>
-        {% for d in lista_categorias %}
-		<li>
-		     {{ d.nombre}}
-		</li>
-	{% endfor %}
-	</ul>
+			<div class="categorias-inferior">
+                <h4>SEGURIDAD</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Seguridad.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias-inferior">
+                <h4>LUZ Y SONIDO</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Luz-y-Sonido.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias-inferior">
+                <h4>MULTIMEDIA</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Multimedia.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias-inferior">
+                <h4>HOGAR</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Hogar.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<div class="categorias-inferior">
+                <h4>AUTOMOVIL</h4>
+				<img class="iconos" src="{% static 'IMG/LOGOS/Botn-Auto.png' %}" width="80px" height="80px" alt="Imagen de conectores">
+            </div>
+			<button name="boton">Añadir Producto</button>
+
 {% endblock %}
