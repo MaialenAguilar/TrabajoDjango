@@ -9,7 +9,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views import View
-from .forms import PedidoForm, ProductoForm
+from .forms import PedidoForm, ProductoForm , ClienteForm
 
 #DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
 
@@ -189,3 +189,24 @@ class CrearProductoView(View):
             return redirect('productos')
 
         return render(request, 'Insertar_Producto.html', {'form': form})
+
+# AÑADIR CLIENTE NUEVO
+
+class CrearClienteView(View):
+    def get(self, request, *args, **kwargs):
+        form = ClienteForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Añadir cliente'
+        }
+        return render(request, 'Añadir_Cliente.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            # Volvemos a la lista de productos
+            return redirect('clientes')
+
+        return render(request, 'Añadir_Cliente.html', {'form': form})

@@ -23,7 +23,8 @@ urlpatterns = [
    # path('pedidos/<int:pedido_id>/', views.detalle_pedidos, name='detalle_pedidos')
     path('pedidos/<int:pk>/', views.Detalle_PedidosDetailView.as_view(), name='detalle_pedidos'),
     path('pedidos/crear/', views.CrearPedidoView.as_view(), name='crear_pedido'),
-    path('productos/crear/', views.CrearProductoView.as_view(), name='Insertar_Producto')
+    path('productos/crear/', views.CrearProductoView.as_view(), name='Insertar_Producto'),
+    path('clientes/añadir/', views.CrearClienteView.as_view(), name='Añadir_Cliente')
 
 
 

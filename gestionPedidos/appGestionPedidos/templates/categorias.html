@@ -49,4 +49,15 @@
             </div>
 			<button name="boton">Añadir Producto</button>
 
+<<<<<<< Updated upstream
+=======
+	<ul>
+        {% for d in lista_categorias %}
+		<li>
+		     {{ d.nombre}}
+		</li>
+	{% endfor %}
+	</ul>
+	<a href="{% url 'Insertar_Producto' %}"><input type="button" value="Insertar producto"></a>
+>>>>>>> Stashed changes
 {% endblock %}
