@@ -78,6 +78,7 @@ main {
 	box-sizing: border-box;
 	display: inline-block;
 	margin-top: 35px;
+	padding-bottom: 25px;
 	/*text-align: center;*/
 	width: 74%;
 

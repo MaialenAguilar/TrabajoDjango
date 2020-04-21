@@ -86,14 +86,14 @@ def categorias(request):
 
 # DEVUELVE EL LISTADO DE PRODUCTOS
 
-class ProductosListView(ListView):
+class ConectoresListView(ListView):
     model = Producto
-    template_name = 'productos.html'
-    queryset = Producto.objects.order_by('nombre')
-    context_object_name = 'lista_productos'
+    template_name = 'conectores.html'
+    queryset = Producto.objects.filter(categoria='conectores')
+    context_object_name = 'lista_conectores'
 
     def get_context_data(self, **kwargs):
-        context = super(ProductosListView, self).get_context_data(**kwargs)
+        context = super(ConectoresListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 

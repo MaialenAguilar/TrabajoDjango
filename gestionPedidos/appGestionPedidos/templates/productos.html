@@ -8,7 +8,7 @@
 <table>
 		<thead>
 		<tr>
-			<th >Productos</th>
+			<th >Conectores</th>
 		</tr>
 		</thead>
 
@@ -16,13 +16,13 @@
 		<tr>
 			<td >Referencia</td>
 			<td >Nombre</td>
-			<td >Categoria</td>
+			<td >Precio</td>
 		</tr>
-		{% for d in lista_productos %}
+		{% for d in lista_conectores %}
         <tr>
 			<td> {{d.referencia}}</td>
 			<td> {{ d.nombre}} </td>
-			<td>{{d.categoria}}</td>
+			<td>{{d.precio}}</td>
 			<td><a href="/appGestionPedidos/productos/{{ d.id }}">Ver</a></td>
 		</tr>
 
