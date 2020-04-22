@@ -6,10 +6,23 @@
 <h2>Listado de componentes</h2>
 
 	<ul>
-        {% for d in lista_componentes %}
-		<li>
-		    {{ d.id }}: {{ d.nombre}}
-		</li>
-	{% endfor %}
+		<table>
+		<thead>
+		<tr>
+			<th>id</th>
+			<th>Nombre</th>
+			<th>Marca</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for d in lista_componentes %}
+		<tr>
+			<td>{{ d.id }}</td>
+			<td>{{ d.nombre}}</td>
+			<td>{{ d.marca }}</td>
+		</tr>
+			{% endfor %}
+		</tbody>
+		</table>
 	</ul>
 {% endblock %}
