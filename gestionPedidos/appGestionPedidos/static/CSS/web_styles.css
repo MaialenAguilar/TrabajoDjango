@@ -370,7 +370,17 @@ h5 {
     float: right;
     margin-right: 30px;
 }
+/*PARA DAR SCROLL A LAS TABLAS*/
+
+/* table border rule*/
+table, td, th { border: 1px solid black; }
+
+/* display as block plus display vertical scroll bars */
+thead, tbody { display: block; overflow-y: scroll; }
+
+/* sample height */
+tbody, table { height: 180px; }
 
 
-
-
+/* sample width and horizontal scroll bar */
+/*div { width: 200px; overflow-x: auto; }*/
