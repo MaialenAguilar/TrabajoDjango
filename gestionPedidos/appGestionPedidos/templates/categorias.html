@@ -47,7 +47,7 @@
                 <h4>AUTOMOVIL</h4>
 				<a href="{% url 'automovil' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Auto.png' %}" width="80px" height="80px" alt="Imagen de automovil"></a>
             </div>
-			<a href="{% url 'Insertar_Producto' %}"><button name="boton">Añadir Producto</button> </a>
+
 
 
 	<ul>
@@ -57,6 +57,6 @@
 		</li>
 	{% endfor %}
 	</ul>
-
+	<a href="{% url 'Insertar_Producto' %}"><button name="boton">Añadir Producto</button> </a>
 
 {% endblock %}

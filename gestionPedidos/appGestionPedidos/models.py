@@ -15,19 +15,21 @@ class Cliente(models.Model):
     def __str__(self):
         return f'{self.nombre_empresa}'
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=60)
+    def __str__(self):
+        return f'{self.nombre}'
 
 class Componente(models.Model):
     codigo_referencia = models.CharField(max_length=10)
     nombre = models.CharField(max_length=120)
     marca = models.CharField(max_length=80)
 
+
     def __str__(self):
         return f'{self.codigo_referencia}--> {self.nombre}'
 
-class Categoria(models.Model):
-    nombre = models.CharField(max_length=60)
-    def __str__(self):
-        return f'{self.nombre}'
+
 
 class Producto(models.Model):
     referencia = models.CharField(max_length=10)

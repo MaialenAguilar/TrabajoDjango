@@ -294,6 +294,7 @@ class CrearPedidoView(View):
 
 # CREAR FORMULARIO PRODUCTOS
 
+
 class CrearProductoView(View):
     def get(self, request, *args, **kwargs):
         form = ProductoForm()
@@ -329,7 +330,19 @@ class CrearClienteView(View):
         if form.is_valid():
             form.save()
 
-            # Volvemos a la lista de productos
+            # Volvemos a la lista de clientes
             return redirect('clientes')
 
         return render(request, 'Añadir_Cliente.html', {'form': form})
+
+
+class ProductosListView(ListView):
+    model = Producto
+    template_name ='productos.html'
+    queryset = Producto.objects.order_by('nombre')
+    context_object_name ='lista_productos'
+
+    def get_context_data(self, **kwargs):
+        context= super(ProductosListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina']='Listado de productos'
+        return context

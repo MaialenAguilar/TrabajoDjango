@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Listado de Productos {% endblock %}
+
+{% block main %}
+<h2>Listado de productos</h2>
+
+    <ul>
+        {% for d in lista_productos %}
+        <li>
+        {{d.referencia}} : {{ d.nombre}} : {{d.categoria}}
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
