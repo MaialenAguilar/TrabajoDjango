@@ -94,7 +94,7 @@ class ConectoresListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ConectoresListView, self).get_context_data(**kwargs)
-        context['Titulo_pagina'] = 'Listado de productos'
+        context['Titulo_pagina'] = 'Listado de Conectores'
         return context
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA MODULOS
@@ -102,7 +102,7 @@ class ConectoresListView(ListView):
 class ModulosListView(ListView):
     model = Producto
     template_name = 'modulos.html'
-    queryset = Producto.objects.filter(categoria__nombre='Conectores')
+    queryset = Producto.objects.filter(categoria__nombre='Modulos')
     context_object_name = 'lista_modulos'
 
     def get_context_data(self, **kwargs):
@@ -218,7 +218,7 @@ class HogarListView(ListView):
 class AutomovilListView(ListView):
     model = Producto
     template_name = 'automovil.html'
-    queryset = Producto.objects.filter(categoria__nombre='Conectores')
+    queryset = Producto.objects.filter(categoria__nombre='Automovil')
     context_object_name = 'lista_automovil'
 
     def get_context_data(self, **kwargs):
