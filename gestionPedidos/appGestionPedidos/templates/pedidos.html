@@ -3,7 +3,7 @@
 {% block titulo %}Listado de Pedidos {% endblock %}
 
 {% block main %}
-<h2>Listado de pedidos</h2>
+<h2 class = "titulos">Listado de pedidos</h2>
 
     <ul>
         {% for d in lista_pedidos %}
@@ -18,7 +18,7 @@
     {% endfor %}
     </ul>
 
-    <a href="{% url 'crear_pedido' %}"><button name="boton">Crear Pedido</button> </a>
+    <a href="{% url 'crear_pedido' %}"><button class="boton" name="boton">Crear Pedido</button> </a>
 {% endblock %}
 
 

@@ -4,59 +4,50 @@
 {% block titulo %}Listado de categorias{% endblock %}
 
 {% block main %}
-<h2>Listado de categorias</h2>
+<h2 class = "titulos">Listado de categorias</h2>
 <!--En esta página, el main va a mostrar iconos con todas las categorías-->
-            <div class="categorias">
-                <h4>CONECTORES</h4>
-				<a href="{% url 'conectores' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-conectores.png' %}" width="80px" height="80px" alt="Imagen de conectores"></a>
-            </div>
-			<div class="categorias">
-                <h4>KIT Y MODULOS</h4>
-				<a href="{% url 'modulos' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Modulos.png' %}" width="80px" height="80px" alt="Imagen de modulos"></a>
-            </div>
-			<div class="categorias">
-                <h4>ILUMINACION</h4>
-				<a href="{% url 'iluminacion' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-iluminac.png' %}" width="80px" height="80px" alt="Imagen de iluminacion"></a>
-            </div>
-			<div class="categorias">
-                <h4>OCIO</h4>
-				<a href="{% url 'ocio' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-ocio.png' %}" width="80px" height="80px" alt="Imagen de ocio"></a>
-            </div>
-			<div class="categorias">
-                <h4>ENERGIA</h4>
-				<a href="{% url 'energia' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Energ.png' %}" width="80px" height="80px" alt="Imagen de energia"></a>
-            </div>
+<div class="categorias">
+	<h5>CONECTORES</h5>
+	<a href="{% url 'conectores' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-conectores.png' %}" width="80px" height="80px" alt="Imagen de conectores"></a>
+</div>
+<div class="categorias">
+	<h5>KIT Y MODULOS</h5>
+	<a href="{% url 'modulos' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Modulos.png' %}" width="80px" height="80px" alt="Imagen de modulos"></a>
+</div>
+<div class="categorias">
+	<h5>ILUMINACION</h5>
+	<a href="{% url 'iluminacion' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-iluminac.png' %}" width="80px" height="80px" alt="Imagen de iluminacion"></a>
+</div>
+<div class="categorias">
+	<h5>OCIO</h5>
+	<a href="{% url 'ocio' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-ocio.png' %}" width="80px" height="80px" alt="Imagen de ocio"></a>
+</div>
+<div class="categorias">
+	<h5>ENERGIA</h5>
+	<a href="{% url 'energia' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Energ.png' %}" width="80px" height="80px" alt="Imagen de energia"></a>
+</div>
 
-			<div class="categorias-inferior">
-                <h4>SEGURIDAD</h4>
-				<a href="{% url 'seguridad' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Seguridad.png' %}" width="80px" height="80px" alt="Imagen de seguridad"></a>
-            </div>
-			<div class="categorias-inferior">
-                <h4>LUZ Y SONIDO</h4>
-				<a href="{% url 'sonido' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Luz-y-Sonido.png' %}" width="80px" height="80px" alt="Imagen de sonido"></a>
-            </div>
-			<div class="categorias-inferior">
-                <h4>MULTIMEDIA</h4>
-				<a href="{% url 'multimedia' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Multimedia.png' %}" width="80px" height="80px" alt="Imagen de multimedia"></a>
-            </div>
-			<div class="categorias-inferior">
-                <h4>HOGAR</h4>
-				<a href="{% url 'hogar' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Hogar.png' %}" width="80px" height="80px" alt="Imagen de hogar"></a>
-            </div>
-			<div class="categorias-inferior">
-                <h4>AUTOMOVIL</h4>
-				<a href="{% url 'automovil' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Auto.png' %}" width="80px" height="80px" alt="Imagen de automovil"></a>
-            </div>
+<div class="categorias-inferior">
+	<h5>SEGURIDAD</h5>
+	<a href="{% url 'seguridad' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Seguridad.png' %}" width="80px" height="80px" alt="Imagen de seguridad"></a>
+</div>
+<div class="categorias-inferior">
+	<h5>LUZ Y SONIDO</h5>
+	<a href="{% url 'sonido' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Luz-y-Sonido.png' %}" width="80px" height="80px" alt="Imagen de sonido"></a>
+</div>
+<div class="categorias-inferior">
+	<h5>MULTIMEDIA</h5>
+	<a href="{% url 'multimedia' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Multimedia.png' %}" width="80px" height="80px" alt="Imagen de multimedia"></a>
+</div>
+<div class="categorias-inferior">
+	<h5>HOGAR</h5>
+	<a href="{% url 'hogar' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Hogar.png' %}" width="80px" height="80px" alt="Imagen de hogar"></a>
+</div>
+<div class="categorias-inferior">
+	<h5>AUTOMOVIL</h5>
+	<a href="{% url 'automovil' %}"><img class="iconos" src="{% static 'IMG/LOGOS/Botn-Auto.png' %}" width="80px" height="80px" alt="Imagen de automovil"></a>
+</div>
 
-
-
-	<ul>
-        {% for d in lista_categorias %}
-		<li>
-		     {{ d.nombre}}
-		</li>
-	{% endfor %}
-	</ul>
-	<a href="{% url 'Insertar_Producto' %}"><button name="boton">Añadir Producto</button> </a>
+<a href="{% url 'Insertar_Producto' %}"><button class = "boton" name="boton">Crear Producto</button> </a>
 
 {% endblock %}
