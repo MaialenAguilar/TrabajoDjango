@@ -125,9 +125,10 @@ fieldset {
  .form-control {
 
 	border-radius: 6px;
+	font-size: 14px;
 	height: 20px;
 	margin-left: 30px;
-	width: 200px;
+	width: 300px;
 	
 }
 /*Estilo para los radio-buttons*/
@@ -149,7 +150,7 @@ fieldset {
 	font-size: 20px;
 	margin-left: 240px;
 	text-align: center;
-	width: 150px;
+	width: 170px;
 	height: 40px;
 }
 /*Estilo general para el formulario de login*/
@@ -341,13 +342,14 @@ h3 {
 /*Formato para el div que contiene cada categoria */
 .categorias, .categorias-inferior {
     display: inline-block;
-    margin-right: 35px;
+    margin-right: 20px;
+    margin-left: 20px;
     text-align: center;
     padding-left: 15px;
-    width: 15%;
+    width: 12%;
 }
-h4 {
-    color: red;
+h5 {
+    color: #023560;
 	font-family: Lato, "sans-serif";
 	font-size: 16px;
 	font-weight: 500;
@@ -359,15 +361,14 @@ h4 {
     margin-top: 45px;
 
 }
-button {
-    background-color: #cee5ee;
-    border-radius: 15px;
-    color: #023560;
-    font-family: "Verdana";
-    font-size: 20px;
-	font-weight: 500;
-	letter-spacing: 1px;
-	margin-top: 35px;
+
+#volver {
+    padding-top: 30px;
+    margin-left: 30px;
+}
+#home {
+    float: right;
+    margin-right: 30px;
 }
 
 
