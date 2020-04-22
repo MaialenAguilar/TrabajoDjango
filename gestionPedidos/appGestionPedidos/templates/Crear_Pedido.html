@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h2>Crear Pedido</h2>
+<h2 class="titulos">Crear Pedido</h2>
 
 <form action="{% url 'crear_pedido' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Nuevo pedido" />
+    <input class="boton" type="submit" value="Guardar" />
 </form>
 <a href="{% url 'pedidos' %}">Volver a la lista</a>
 

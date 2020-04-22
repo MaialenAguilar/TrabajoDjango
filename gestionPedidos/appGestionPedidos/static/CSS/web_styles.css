@@ -102,14 +102,15 @@ main {
 	color: white;
 	padding: 10px;
 	margin-left: 15px;
+	width: 50%;
 	}
 /*Cada línea del formulario está formada por un label y un input*/
 .formulario {
 	line-height: 40px;
 }
-.campos {
+label {
 	float: left;
-	width: 35%;
+	width: 20%;
 
 }
 .usuario, .bancarios, .enviar-registro {
@@ -121,7 +122,8 @@ main {
 fieldset {
 	border: 0;
 }
- .prueba {
+ .form-control {
+
 	border-radius: 6px;
 	height: 20px;
 	margin-left: 30px;
