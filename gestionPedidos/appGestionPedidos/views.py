@@ -3,13 +3,13 @@ from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
 
-from django.views.generic import DetailView, ListView
-from django.shortcuts import render
 
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView, TemplateView, RedirectView
 from django.views import View
-from .forms import PedidoForm, ProductoForm , ClienteForm
+from .forms import PedidoForm, ProductoForm, ClienteForm
+
+
 
 #DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
 

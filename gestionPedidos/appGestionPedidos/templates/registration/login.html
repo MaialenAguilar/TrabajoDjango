@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es"><!--Establecemos idioma castellano por accesibilidad-->
+	<head>
+		<link rel="stylesheet" href="{% static 'CSS/web_styles.css' %}"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
+		<meta name="description" content="Aplicación de Deustronics Components S.L. par la Gestión de Pedidos">
+		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
+	</head>
+    <body>
+        <div class="contenedor-login" method="POST" action="{% url 'login' %}">
+            <form class="form-login">
+                {% csrf_token %}
+
+                {{ form.username.label_tag }}
+                {{ form.username }}
+
+                {{ form.password.label_tag }}
+                {{ form.password }}
+
+                {{ form.errors }}
+
+                <input id="boton-login" type="submit" value="Login">
+
+            </form>
+        </div>
+    </body>

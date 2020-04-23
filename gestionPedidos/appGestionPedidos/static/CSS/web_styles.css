@@ -75,6 +75,7 @@ footer img {
 main {
     background-color: #cee5ee;
     background-radio: 10px;
+    border-radius: 10px;
 	box-sizing: border-box;
 	display: inline-block;
 	margin-top: 35px;
@@ -259,6 +260,7 @@ p {
 /*Estilo para la posición de la columna izquierda*/
 .columna-izquierda {
 	background-color: #cee5ee;
+	border-radius: 10px;
 	box-sizing: border-box;
 	float: left;
 	margin-top: 35px;
@@ -373,13 +375,21 @@ h5 {
 /*PARA DAR SCROLL A LAS TABLAS*/
 
 /* table border rule*/
-table, td, th { border: 1px solid black; }
+table, td, th {
+    border: 1px solid black;
+}
 
 /* display as block plus display vertical scroll bars */
-thead, tbody { display: block; overflow-y: scroll; }
+thead, tbody {
+    display: block;
+    overflow-y: scroll;
+}
 
 /* sample height */
-tbody, table { height: 180px; }
+tbody, table {
+    height: 300px;
+    width: 100%;
+}
 
 
 /* sample width and horizontal scroll bar */

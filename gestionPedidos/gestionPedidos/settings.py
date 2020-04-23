@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+#Tenemos que indicarle a la aplicación dónde nos tiene que dirigir una vez que el login sea correcto
+LOGIN_REDIRECT_URL = '/home'
