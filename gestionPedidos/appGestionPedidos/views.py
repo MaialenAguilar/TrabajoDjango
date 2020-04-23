@@ -1,4 +1,3 @@
-
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
@@ -9,12 +8,14 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views import View
-from .forms import PedidoForm, ProductoForm , ClienteForm
+from .forms import PedidoForm, ProductoForm, ClienteForm
 
-#DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
+
+# DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
 
 def home(request):
     return render(request, 'home.html')
+
 
 # DEVUELVE EL LISTADO DE CLIENTES
 
@@ -40,6 +41,19 @@ class Detalle_ClienteDetailView(DetailView):
         context = super(Detalle_ClienteDetailView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Datos de cliente'
         return context
+
+
+# BORRA CLIENTE
+
+# delete view for details
+
+def delete(request, cliente_id):
+    # Recuperamos la instancia de la persona y la borramos
+    instancia = Cliente.objects.get(id=cliente_id)
+    instancia.delete()
+
+    # Después redireccionamos de nuevo a la lista
+    return redirect('/')
 
 
 # DEVUELVE LISTADO DE COMPONENTES
@@ -70,7 +84,7 @@ class Detalle_CompoentesDetailView(DetailView):
 
 # DEVUELVE EL LISTADO DE CATEGORIAS
 
-#class CategoriasListView(ListView):
+# class CategoriasListView(ListView):
 #    model = Categoria
 #   template_name = 'categorias.html'
 #   queryset = Categoria.objects.order_by('nombre')
@@ -84,6 +98,7 @@ class Detalle_CompoentesDetailView(DetailView):
 def categorias(request):
     return render(request, 'categorias.html')
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA CONECTORES
 
 class ConectoresListView(ListView):
@@ -96,6 +111,7 @@ class ConectoresListView(ListView):
         context = super(ConectoresListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de Conectores'
         return context
+
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA MODULOS
 
@@ -122,6 +138,7 @@ class Detalle_ProductosDetailView(DetailView):
         context['Titulo_pagina'] = 'Datos del producto'
         return context
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA ILUMINACION
 
 class IluminacionListView(ListView):
@@ -134,6 +151,7 @@ class IluminacionListView(ListView):
         context = super(IluminacionListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
+
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA OCIO
 
@@ -148,6 +166,7 @@ class OcioListView(ListView):
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA ENERGIA
 
 class EnergiaListView(ListView):
@@ -160,6 +179,7 @@ class EnergiaListView(ListView):
         context = super(EnergiaListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
+
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA SEGURIDAD
 
@@ -174,6 +194,7 @@ class SeguridadListView(ListView):
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA LUZ Y SONIDO
 
 class SonidoListView(ListView):
@@ -186,6 +207,7 @@ class SonidoListView(ListView):
         context = super(SonidoListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
+
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA MULTIMEDIA
 
@@ -200,6 +222,7 @@ class MultimediaListView(ListView):
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA HOGAR
 
 class HogarListView(ListView):
@@ -213,6 +236,7 @@ class HogarListView(ListView):
         context['Titulo_pagina'] = 'Listado de productos'
         return context
 
+
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA AUTOMOVIL
 
 class AutomovilListView(ListView):
@@ -225,12 +249,6 @@ class AutomovilListView(ListView):
         context = super(AutomovilListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
-
-
-
-
-
-
 
 
 # DEVUELVE LISTA DE PEDIDOS
@@ -314,6 +332,7 @@ class CrearProductoView(View):
 
         return render(request, 'Insertar_Producto.html', {'form': form})
 
+
 # AÑADIR CLIENTE NUEVO
 
 class CrearClienteView(View):
@@ -338,11 +357,11 @@ class CrearClienteView(View):
 
 class ProductosListView(ListView):
     model = Producto
-    template_name ='productos.html'
+    template_name = 'productos.html'
     queryset = Producto.objects.order_by('nombre')
-    context_object_name ='lista_productos'
+    context_object_name = 'lista_productos'
 
     def get_context_data(self, **kwargs):
-        context= super(ProductosListView, self).get_context_data(**kwargs)
-        context['Titulo_pagina']='Listado de productos'
+        context = super(ProductosListView, self).get_context_data(**kwargs)
+        context['Titulo_pagina'] = 'Listado de productos'
         return context

@@ -37,4 +37,9 @@
 	{% else %}
 		<p>No existe este departamento.</p>
 	{% endif %}
+<a href="/delete/{{ cliente.id }}"
+          onClick="return confirm('¿Seguro que quieres borrar a {{cliente.nombre}}?');">
+            Borrar
+        </a>
+
 {% endblock %}
