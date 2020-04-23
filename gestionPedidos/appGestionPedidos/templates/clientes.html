@@ -6,7 +6,7 @@
 <h2 class = "titulos">Listado de clientes</h2>
 
 	<div class = "tabla">
-	<table>
+	<table class="table_clientes">
 		<thead>
 		<tr>
 			<th >ID</th>
@@ -25,5 +25,5 @@
 		</tbody>
 	</table>
 	</div>
-	<a href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
+	<a class="anadir_cliente" href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
 {% endblock %}
