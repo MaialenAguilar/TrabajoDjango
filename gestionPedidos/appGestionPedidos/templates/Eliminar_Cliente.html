@@ -6,8 +6,22 @@
 
 <form action=""  method="post" >
         {% csrf_token %}
-        <p>Estas seguro de que quieres borrarlo"{% block titulo %}"?</p>
+        <p>Estas seguro de que quieres borrarlo{% block titulo %}?</p>
+         <ul class="datos">
+	<li> Cliente seleccionado:
+        <ul>
+            <li>
+            <label class="cabecera">ID :</label>
+		    {{ cliente.id }}
+	        </li>
+	        <li>
+		    <label class="cabecera">Empresa :</label>
+            {{ cliente.nombre_empresa}}
+	        </li>
+        </ul>
+
         <input type="submit" value="Delete"/>
+         </ul>
     </form>
 {% endblock %}
 {% endblock %}
