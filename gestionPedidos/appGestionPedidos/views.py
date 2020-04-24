@@ -46,13 +46,14 @@ class Detalle_ClienteDetailView(DetailView):
 
 # delete view for details
 
-def delete(request, cliente_id):
+def delete(request, pk):
+    print("llego aqui")
     # Recuperamos la instancia de la persona y la borramos
-    instancia = Cliente.objects.get(id=cliente_id)
+    instancia = Cliente.objects.get(id=pk)
     instancia.delete()
 
     # Después redireccionamos de nuevo a la lista
-    return redirect('/')
+    return redirect('clientes')
 
 
 # DEVUELVE LISTADO DE COMPONENTES
