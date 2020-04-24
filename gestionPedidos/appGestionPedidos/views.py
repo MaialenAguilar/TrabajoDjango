@@ -8,10 +8,7 @@ from django.views.generic import ListView, DetailView, FormView, TemplateView, R
 from django.views import View
 from .forms import PedidoForm, ProductoForm, ClienteForm
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 
 # DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
 
