@@ -1,10 +1,12 @@
+from django.urls import reverse
+
 from .models import Cliente, Componente, Categoria, Producto, Pedido
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
 
 
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, FormView, TemplateView, RedirectView
+from django.views.generic import ListView, DetailView,DeleteView, FormView, TemplateView, RedirectView
 from django.views import View
 from .forms import PedidoForm, ProductoForm, ClienteForm
 
@@ -44,16 +46,23 @@ class Detalle_ClienteDetailView(DetailView):
 
 # BORRA CLIENTE
 
-# delete view for details
 
-def delete(request, pk):
-    print("llego aqui")
-    # Recuperamos la instancia de la persona y la borramos
-    instancia = Cliente.objects.get(id=pk)
-    instancia.delete()
+class Eliminar_ClientesDeleteView(DeleteView):
+    model = Cliente
+    form_class= ClienteForm
+    template_name = 'Eliminar_Cliente.html'
 
-    # Después redireccionamos de nuevo a la lista
-    return redirect('clientes')
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_ClientesDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     cliente = Cliente.objects.get(id=pk)
+     context.update({'cliente': cliente})
+     return context
+
+    def get_success_url(self):
+        return reverse('clientes')
+
 
 
 # DEVUELVE LISTADO DE COMPONENTES

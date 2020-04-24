@@ -39,5 +39,7 @@ urlpatterns = [
     path('pedidos/crear/', views.CrearPedidoView.as_view(), name='crear_pedido'),
     path('productos/crear/', views.CrearProductoView.as_view(), name='Insertar_Producto'),
     path('clientes/crear/', views.CrearClienteView.as_view(), name='Añadir_Cliente'),
-    path('clientes/Datos_cliente/delete/<int:pk>/', views.delete, name='borrar_cliente')
+    path('clientes/delete/<int:pk>/', views.Eliminar_ClientesDeleteView.as_view(), name='Eliminar_Cliente'),
+
+
 ]

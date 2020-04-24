@@ -20,6 +20,7 @@
 			<td > {{ d.id }}</td>
 			<td >{{ d.nombre_empresa}}</td>
 			<td ><a href="/appGestionPedidos/clientes/{{ d.id }}">Mostrar Cliente</a></td>
+			<td ><a href="/appGestionPedidos/clientes/delete/{{ d.id }}">Eliminar</a></td>
 		</tr>
 		{% endfor %}
 		</tbody>

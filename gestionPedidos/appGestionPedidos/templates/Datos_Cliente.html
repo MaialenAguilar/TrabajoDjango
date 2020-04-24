@@ -41,13 +41,5 @@
 	</li>
 
 </ul>
-<p ><a href="/appGestionPedidos/clientes/{{ d.id }}">ATRÁS</a></p>
-	{% else %}
-		<p>No existe este departamento.</p>
-	{% endif %}
-<a href="{% url 'borrar_cliente' cliente.id %}"
-          onClick="return confirm('¿Seguro que quieres borrar a {{cliente.id}}?');">
-            Borrar
-        </a>
 
 {% endblock %}
