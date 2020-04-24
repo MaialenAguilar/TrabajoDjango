@@ -4,18 +4,11 @@ from . import views
 #Esto sería necesario para trabajar con LoginView, pero como hemos importado anteriormente todas las Views, no sería necesario.
 from django.contrib.auth.views import LoginView
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 urlpatterns = [
 
     path('login/', LoginView.as_view(), name='login'),
     path('home/', views.home, name='home'),
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     path('', views.home, name='home'),
     path('clientes/', views.ClientesListView.as_view(), name='clientes'),
     # path('clientes/<int:cliente_id>/', views.detalle_cliente, name='detalle_cliente'),

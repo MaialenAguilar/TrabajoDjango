@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block main %}
-<h2>Insertar Producto</h2>
+<h2 class="titulos">Crear Producto</h2>
 
 <form action="{% url 'Insertar_Producto' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Insertar producto" />
+    <input class="boton" type="submit" value="Guardar" />
 </form>
-<a href="{% url 'productos' %}">Volver a la lista</a>
+<a id="volver" href="{% url 'pedidos' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
+<a id="home" href = "{% url 'home' %}"><img src="{% static 'IMG/LOGOS/home.png' %}" width="40px" height="40px" alt="Imagen de home"></a>
 
 {% endblock %}

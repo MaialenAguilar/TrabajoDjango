@@ -3,33 +3,41 @@
 {% block titulo %}Datos Del Cliente{% endblock %}
 
 {% block main %}
-<h2>Datos Del Cliente</h2>
+<h2 class="titulos">Datos Del Cliente</h2>
 
 {% if cliente %}
-<ul class="datos_cliente">
+<ul class="datos">
 	<li>
-		ID : {{ cliente.id }}
+		<label class="cabecera">ID :</label>
+		{{ cliente.id }}
 	</li>
 	<li>
-		Empresa : {{ cliente.nombre_empresa}}
+		<label class="cabecera">Empresa :</label>
+		{{ cliente.nombre_empresa}}
 	</li>
 	<li>
-		Telefono : {{cliente.telefono}}
+		<label class="cabecera">Telefono :</label>
+		{{cliente.telefono}}
 	</li>
 	<li>
-		Persona contacto : {{cliente.persona_contacto}}
+		<label class="cabecera">Persona contacto :</label>
+		{{cliente.persona_contacto}}
 	</li>
 	<li>
-		C/ {{ cliente.direccion }}
+		<label class="cabecera">Dirección :</label>
+		{{ cliente.direccion }}
 	</li>
 	<li>
-		C.P. ({{ cliente.codigo_postal}})
+		<label class="cabecera">C.P. :</label>
+		{{ cliente.codigo_postal}}
 	</li>
 	<li>
-		{{cliente.Localidad}} : ({{cliente.Provincia}})
+		<label class="cabecera">Localidad :</label>
+		{{cliente.Localidad}} ({{cliente.Provincia}})
 	</li>
 	<li>
-		Email : {{cliente.email}}
+		<label class="cabecera">Email :</label>
+		{{cliente.email}}
 	</li>
 
 </ul>

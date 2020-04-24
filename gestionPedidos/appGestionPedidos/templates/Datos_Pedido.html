@@ -3,27 +3,45 @@
 {% block titulo %} Datos de pedido {% endblock %}
 
 {% block main %}
-<h2>Datos del pedido</h2>
+<h2 class="titulos">Datos del pedido</h2>
 
 {% if pedido %}
-    <ul>
+    <ul class="datos">
         <li>
+            <label class="cabecera">Identificador :</label>
             {{pedido.identificador}}
         </li>
          <li>
+             <label class="cabecera">Fecha de Pedido :</label>
             {{pedido.fecha_pedido}}
         </li>
          <li>
+             <label class="cabecera">Fecha de entrega :</label>
             {{pedido.fecha_entrega}}
         </li>
          <li>
+             <label class="cabecera">Producto :</label>
             {{pedido.producto}}
         </li>
          <li>
+             <label class="cabecera">Cantidad :</label>
             {{pedido.cantidad}}
         </li>
          <li>
+             <label class="cabecera">Cliente :</label>
             {{pedido.cliente}}
+        </li>
+        <li>
+             <label class="cabecera">Base imponible :</label>
+            {{pedido.base_imponible}}
+        </li>
+        <li>
+             <label class="cabecera">IVA :</label>
+            {{pedido.iva}}
+        </li>
+        <li>
+             <label class="cabecera">Importe Total :</label>
+            {{pedido.precio_total}}
         </li>
     </ul>
 {% else %}

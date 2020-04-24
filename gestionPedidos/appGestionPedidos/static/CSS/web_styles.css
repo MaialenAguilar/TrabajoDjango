@@ -281,9 +281,6 @@ ul {
 	padding-left: 0px;
 
 }
-li {
-	border-bottom: 10px, solid, #023560;
-}
 
 a {
 	text-decoration: inherit;/*De esta forma eliminamos el estilo por defecto de los enlaces en html*/
@@ -389,6 +386,18 @@ thead, tbody {
 tbody, table {
     height: 300px;
     width: 100%;
+}
+/*Damos estilo a la lista con datos de una entidad*/
+.datos {
+    color: #023560;
+    font-family: Verdana;
+    line-height: 35px;
+    margin-left: 30px;
+}
+/*Vamos a resaltar las cabeceras de los campos*/
+.cabecera {
+    font-weight: Bold;
+    width: 200px;
 }
 
 
