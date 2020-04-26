@@ -150,9 +150,13 @@ fieldset {
 	color: white;
 	font-size: 20px;
 	margin-left: 240px;
+	margin-top: 30px;
 	text-align: center;
 	width: 170px;
 	height: 40px;
+}
+.crear {
+    margin-top: 30px;
 }
 /*Estilo general para el formulario de login*/
 .form-login {
@@ -294,7 +298,7 @@ a {
 
 }
 /*Utlizamos una pseudoclase para definir el estilo de los enlaces sólo cuando pasamos el ratón por encima*/
-a:hover {
+.enlace-menu:hover {
 	background-color: red;
 }
 h3 {
@@ -307,14 +311,7 @@ h3 {
 	margin-left: 50px;
 
 }
-.imagen-juegos {
-	box-sizing: border-box;
-	float: left;
-	margin-top: 30px;
-	margin-right: 10px;
-	width: 41%;
-	
-}
+
 /*Definimos el estilo para el contenedor de la tabla*/
 .tabla {
 
@@ -326,18 +323,7 @@ h3 {
 /*Estilo general para la tabla*/
 
 
-.boton-jugar {
-	background-color: #cee5ee;
-	border-radius: 10px;
-	color: #023560;
-	font-size: 20px;
-	margin-left: 240px;
-	margin-top: 30px;
-	margin-bottom: 50px;
-	text-align: center;
-	width: 150px;
-	height: 40px;
-}
+
 /*Formato para el div que contiene cada categoria */
 .categorias, .categorias-inferior {
     display: inline-block;
@@ -372,8 +358,41 @@ h5 {
 /*PARA DAR SCROLL A LAS TABLAS*/
 
 /* table border rule*/
-table, td, th {
-    border: 1px solid black;
+td, th {
+    border: 1px solid #023560;
+    color: #023560;
+    font-family: Verdana;
+    padding: 0.3em;
+    text-align: left;
+
+}
+th {
+    font-size: 15px;
+}
+td {
+    font-size: 16px;
+}
+/*Establecemos la anchura de cada una de las columnas, mediante las clases que hemos definido*/
+.primera {
+    width: 15%;
+}
+.segunda {
+    width: 400px;
+}
+.tercera, .cuarta {
+    text-align: center;
+    width: 20%;
+}
+/*Hacemos lo mismo con las columnas del titulo*/
+.primera-titulo {
+    width: 15%;
+}
+.segunda-titulo {
+    width: 400px;
+}
+.tercera-titulo, .cuarta-titulo {
+    text-align: center;
+    width: 20%;
 }
 
 /* display as block plus display vertical scroll bars */
@@ -384,6 +403,7 @@ thead, tbody {
 
 /* sample height */
 tbody, table {
+    border-collapse: collapse;
     height: 300px;
     width: 100%;
 }
@@ -399,6 +419,7 @@ tbody, table {
     font-weight: Bold;
     width: 200px;
 }
+
 
 
 

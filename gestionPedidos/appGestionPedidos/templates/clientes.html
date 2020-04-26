@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block titulo %}Listado de Clientes{% endblock %}
 
@@ -9,22 +10,23 @@
 	<table class="table_clientes">
 		<thead>
 		<tr>
-			<th >ID</th>
-			<th >Nombre de la empresa</th>
-			<th >Visualiza cliente</th>
+			<th class="primera-titulo">ID</th>
+			<th class="segunda-titulo">Nombre de la empresa</th>
+			<th class="tercera-titulo">Visualizar cliente</th>
+			<th class="cuarta-titulo">Eliminar</th>
 		</tr>
 		</thead>
 		<tbody>
 		{% for d in lista_clientes %}
 		<tr>
-			<td > {{ d.id }}</td>
-			<td >{{ d.nombre_empresa}}</td>
-			<td ><a href="/appGestionPedidos/clientes/{{ d.id }}">Mostrar Cliente</a></td>
-			<td ><a href="/appGestionPedidos/clientes/delete/{{ d.id }}">Eliminar</a></td>
+			<td class="primera" > {{ d.id }}</td>
+			<td class="segunda">{{ d.nombre_empresa}}</td>
+			<td class="tercera"><a href="/appGestionPedidos/clientes/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 		</tr>
 		{% endfor %}
 		</tbody>
 	</table>
 	</div>
-	<a class="anadir_cliente" href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
+	<a class="crear" href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
 {% endblock %}
