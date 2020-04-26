@@ -3,26 +3,26 @@
 {% block titulo %}Listado de Componentes{% endblock %}
 
 {% block main %}
-<h2>Listado de componentes</h2>
+<h2 class = "titulos">Listado de componentes</h2>
 
-	<ul>
-		<table>
-		<thead>
+	<div class="tabla">
+		<table class="tabla_componentes">
+		<thead class="thead_componentes">
 		<tr>
-			<th>id</th>
-			<th>Nombre</th>
-			<th>Marca</th>
+			<th class="primera-titulo">id</th>
+			<th class="segunda-titulo">Nombre</th>
+			<th class="tercera-titulo">Marca</th>
 		</tr>
 		</thead>
-		<tbody>
+		<tbody class="tbody_componentes">
 		{% for d in lista_componentes %}
 		<tr>
-			<td>{{ d.id }}</td>
-			<td>{{ d.nombre}}</td>
-			<td>{{ d.marca }}</td>
+			<td class="primera">{{ d.id }}</td>
+			<td class="segunda">{{ d.nombre}}</td>
+			<td class="tercera">{{ d.marca }}</td>
 		</tr>
 			{% endfor %}
 		</tbody>
 		</table>
-	</ul>
+	</div>
 {% endblock %}

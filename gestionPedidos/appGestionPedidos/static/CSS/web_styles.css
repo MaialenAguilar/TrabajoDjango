@@ -358,6 +358,8 @@ h5 {
 /*PARA DAR SCROLL A LAS TABLAS*/
 
 /* table border rule*/
+
+
 td, th {
     border: 1px solid #023560;
     color: #023560;
@@ -372,6 +374,17 @@ th {
 td {
     font-size: 16px;
 }
+tr {
+style: border-collapse;
+}
+
+.tabla_componentes{
+    align: center;
+    box-sizing: border-box;
+    padding-left: 15px;
+    width: 655px;
+}
+
 /*Establecemos la anchura de cada una de las columnas, mediante las clases que hemos definido*/
 .primera {
     width: 15%;

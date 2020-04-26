@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 
 {% block main %}
@@ -20,8 +20,11 @@
 	        </li>
         </ul>
 
-        <input class="boton" type="submit" value="Eliminar"/>
+        <a><input class="boton" type="submit" value="Eliminar"/></a>
+        <a href="{% url 'clientes' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
+
          </ul>
+
     </form>
 
 {% endblock %}
