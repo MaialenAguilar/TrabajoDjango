@@ -5,25 +5,28 @@
 {% block main %}
 
 <form action=""  method="post" >
-        {% csrf_token %}
-        <p>¿Estás seguro de que quieres borrarlo?</p>
-         <ul class="datos">
-	<li> Cliente seleccionado:
-        <ul>
-            <li>
-            <label class="cabecera">ID :</label>
-		    {{ cliente.id }}
-	        </li>
-	        <li>
-		    <label class="cabecera">Empresa :</label>
-            {{ cliente.nombre_empresa}}
-	        </li>
-        </ul>
+    {% csrf_token %}
+    <p>¿Estás seguro de que quieres borrarlo?</p>
+    <ul class="datos">
+	    <li> Cliente seleccionado:
+            <ul>
+                <li>
+                    <label class="cabecera">ID :</label>
+		            {{ cliente.id }}
+	            </li>
+	            <li>
+		            <label class="cabecera">Empresa :</label>
+                    {{ cliente.nombre_empresa}}
+	            </li>
+            </ul>
 
+        </li>
+    </ul>
         <a><input class="boton" type="submit" value="Eliminar"/></a>
-        <a href="{% url 'clientes' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
+    <div>
+        <a id="volver" href="{% url 'clientes' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
+    </div>
 
-         </ul>
 
     </form>
 
