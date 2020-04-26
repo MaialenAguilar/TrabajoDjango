@@ -1,24 +1,35 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block titulo %}Listado de Pedidos {% endblock %}
+{% block titulo %}Listado de Pedidos{% endblock %}
 
 {% block main %}
-<h2 class = "titulos">Listado de pedidos</h2>
+<h2 class = "titulos">Listado de Pedidos</h2>
 
-    <ul>
-        {% for d in lista_pedidos %}
-        <li>
-               Datos__ ID: -- Fecha pedido: -- Situación:
-        </li>
-        <li>
-            <ul>
-       {{d.identificador}} -- {{ d.fecha_pedido}} --  {{d.entregado}}<li> <a href="/appGestionPedidos/pedidos/{{ d.id }}">Ver Pedido</a></li>
-            </ul>
-        </li>
-    {% endfor %}
-    </ul>
-
-    <a href="{% url 'crear_pedido' %}"><button class="boton" name="boton">Crear Pedido</button> </a>
+	<div class = "tabla">
+	<table>
+		<thead>
+		<tr>
+			<th class="primera-titulo">ID</th>
+			<th class="segunda-titulo">Cliente</th>
+            <th class="tercera-titulo">Entregado</th>
+			<th class="tercera-titulo">Visualizar Pedido</th>
+			<th class="cuarta-titulo">Eliminar</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for d in lista_pedidos %}
+		<tr>
+			<td class="primera" > {{ d.id }}</td>
+			<td class="segunda">{{ d.cliente}}</td>
+            <td class="tercera">{{ d.entregado}}</td>
+			<td class="tercera"><a href="/appGestionPedidos/pedidos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+	<a class="crear" href="{% url 'crear_pedido' %}"><button class ="boton" name="boton">Crear Pedido</button> </a>
 {% endblock %}
-
 

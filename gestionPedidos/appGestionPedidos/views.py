@@ -181,7 +181,7 @@ class OcioListView(ListView):
 class EnergiaListView(ListView):
     model = Producto
     template_name = 'energia.html'
-    queryset = Producto.objects.filter(categoria__nombre='Energia')
+    queryset = Producto.objects.filter(categoria__nombre='Energía')
     context_object_name = 'lista_energia'
 
     def get_context_data(self, **kwargs):

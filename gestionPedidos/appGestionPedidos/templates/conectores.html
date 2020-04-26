@@ -1,31 +1,32 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block titulo %}Listado de Productos {% endblock %}
+{% block titulo %}Conectores{% endblock %}
 
 {% block main %}
-<h2>CONECTORES</h2>
+<h2 class = "titulos">Conectores</h2>
 
-<table>
+	<div class = "tabla">
+	<table>
 		<thead>
 		<tr>
-			<th ></th>
+			<th class="primera-titulo">Ref.</th>
+			<th class="segunda-titulo">Nombre</th>
+			<th class="tercera-titulo">Visualizar producto</th>
+			<th class="cuarta-titulo">Eliminar</th>
 		</tr>
 		</thead>
-
-
-		<tr>
-			<td >Referencia</td>
-			<td >Nombre</td>
-			<td >Precio</td>
-		</tr>
+		<tbody>
 		{% for d in lista_conectores %}
-        <tr>
-			<td> {{d.referencia}}</td>
-			<td> {{ d.nombre}} </td>
-			<td>{{d.precio}}</td>
-			<td><a href="/appGestionPedidos/productos/{{ d.id }}">Ver</a></td>
+		<tr>
+			<td class="primera" > {{ d.referencia }}</td>
+			<td class="segunda">{{ d.nombre}}</td>
+			<td class="tercera"><a href="/appGestionPedidos/productos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 		</tr>
-
-    {% endfor %}
-</table>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+	<a class="crear" href="{% url 'Insertar_Producto' %}"><button class ="boton" name="boton">Crear Producto</button> </a>
 {% endblock %}
