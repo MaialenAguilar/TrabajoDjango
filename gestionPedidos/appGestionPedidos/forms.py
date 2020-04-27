@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, Widget
 from .models import Cliente, Categoria, Producto, Componente, Pedido
 class ClienteForm(ModelForm):
     class Meta:
@@ -37,6 +37,13 @@ class PedidoForm(ModelForm):
     class Meta:
         model = Pedido
         fields = '__all__'
+        #Establecemos el formato de input que deseamos
+        widgets = {
+            'fecha_pedido': forms.SelectDateWidget(attrs={
+                #Añadimos una clase para darle estilo
+                'class': 'fecha'}),
+        }
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

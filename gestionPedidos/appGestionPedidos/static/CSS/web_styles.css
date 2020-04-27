@@ -13,7 +13,7 @@ header {
 }
 /*Definimos el estilo de los elementos que componen la cabecera*/
 h1 {
-	color: #cee5ee;
+	color: #b4deee;
 	display: inline-block;
 	font-family: Lato, "sans-serif";
 	font-size: 50px;
@@ -60,16 +60,24 @@ footer {
 	margin-top: 15px;
 	max-width: 100%;
 	padding-left: 15px;
+	padding-top: 15px;
+
 
 }
 footer img {
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 0px;
 }
 .contacto {
-	margin-right: 20px;
-	margin-top: 50px;
+	margin-right: 30px;
 	float:right;
+}
+/*Tenemos que dar estilo a los label del footer porque hemos puesto un estilo para las etiquetas label, y lo está cogiendo*/
+footer label {
+    float: none;
+    padding-top: 20px;
+    margin-right: 20px;
+    vertical-align: top;
 }
 /*Definimos tamaño del contenedor principal, el del centro de la página*/
 main {
@@ -114,11 +122,7 @@ label {
 	width: 20%;
 
 }
-.usuario, .bancarios, .enviar-registro {
-	margin-left: 50px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
+
 /*Eliminamos la línea del fieldset*/
 fieldset {
 	border: 0;
@@ -130,18 +134,16 @@ fieldset {
 	height: 20px;
 	margin-left: 30px;
 	width: 300px;
-	
+}
+.fecha {
+    width: 30%;
 }
 /*Estilo para los radio-buttons*/
 .radio {
 	width: 20px;
 	margin-left: 30px;
 }
-/*Estilo para el enlace de condiciones de servicio*/
-.formulario a {
-	color: #023560;
-	text-decoration: underline;
-}
+
 
 /*Estilo para el botón de envío del formulario de registro*/
  .boton {
