@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+<form action=""  method="post" >
+    {% csrf_token %}
+    <p>¿Estás seguro de que quieres borrarlo?</p>
+    <ul class="datos">
+	    <li> Producto seleccionado:
+            <ul>
+                <li>
+                    <label class="cabecera">ID :</label>
+		            {{ producto.id }}
+	            </li>
+	            <li>
+		            <label class="cabecera">Producto :</label>
+                    {{ producto.nombre}}
+	            </li>
+            </ul>
+
+        </li>
+    </ul>
+        <a><input class="boton" type="submit" value="Eliminar"/></a>
+    <div>
+        <a id="volver" href="{% url 'multimedia' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
+
+    </div>
+
+
+    </form>
+
+{% endblock %}

@@ -40,6 +40,21 @@ urlpatterns = [
     path('productos/crear/', views.CrearProductoView.as_view(), name='Insertar_Producto'),
     path('clientes/crear/', views.CrearClienteView.as_view(), name='Añadir_Cliente'),
     path('clientes/delete/<int:pk>/', views.Eliminar_ClientesDeleteView.as_view(), name='Eliminar_Cliente'),
+    path('energia/delete/<int:pk>/', views.Eliminar_EnergiaDeleteView.as_view(), name='Eliminar_Energia'),
+    path('hogar/delete/<int:pk>/', views.Eliminar_HogarDeleteView.as_view(), name='Eliminar_Hogar'),
+    path('iluminacion/delete/<int:pk>/', views.Eliminar_IluminacionDeleteView.as_view(), name='Eliminar_Iluminacion'),
+    path('modulos/delete/<int:pk>/', views.Eliminar_ModulosDeleteView.as_view(), name='Eliminar_Modulos'),
+    path('multimedia/delete/<int:pk>/', views.Eliminar_MultimediaDeleteView.as_view(), name='Eliminar_Multimedia'),
+    path('ocio/delete/<int:pk>/', views.Eliminar_OcioDeleteView.as_view(), name='Eliminar_Ocio'),
+    path('seguridad/delete/<int:pk>/', views.Eliminar_SeguridadDeleteView.as_view(), name='Eliminar_Seguridad'),
+    path('sonido/delete/<int:pk>/', views.Eliminar_SonidoDeleteView.as_view(), name='Eliminar_Sonido'),
+    path('conectores/delete/<int:pk>/', views.Eliminar_ConectoresDeleteView.as_view(), name='Eliminar_Conectores'),
+    path('automovil/delete/<int:pk>/', views.Eliminar_AutomovilDeleteView.as_view(), name='Eliminar_Automovil'),
+
+
+
+
+
 
 
 ]

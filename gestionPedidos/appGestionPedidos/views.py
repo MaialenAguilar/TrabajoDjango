@@ -44,24 +44,6 @@ class Detalle_ClienteDetailView(DetailView):
         return context
 
 
-# BORRA CLIENTE
-
-
-class Eliminar_ClientesDeleteView(DeleteView):
-    model = Cliente
-    form_class= ClienteForm
-    template_name = 'Eliminar_Cliente.html'
-
-
-    def get_context_data(self, **kwargs):
-     context = super(Eliminar_ClientesDeleteView, self).get_context_data(**kwargs)
-     pk= self.kwargs.get('pk')
-     cliente = Cliente.objects.get(id=pk)
-     context.update({'cliente': cliente})
-     return context
-
-    def get_success_url(self):
-        return reverse('clientes')
 
 
 
@@ -146,6 +128,8 @@ class Detalle_ProductosDetailView(DetailView):
         context = super(Detalle_ProductosDetailView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Datos del producto'
         return context
+
+
 
 
 # DEVUELVE EL LISTADO DE PRODUCTOS, CATEGORIA ILUMINACION
@@ -374,3 +358,199 @@ class ProductosListView(ListView):
         context = super(ProductosListView, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de productos'
         return context
+
+# BORRA CLIENTE
+
+
+class Eliminar_ClientesDeleteView(DeleteView):
+    model = Cliente
+    form_class= ClienteForm
+    template_name = 'Eliminar_Cliente.html'
+
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_ClientesDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     cliente = Cliente.objects.get(id=pk)
+     context.update({'cliente': cliente})
+     return context
+
+    def get_success_url(self):
+        return reverse('clientes')
+
+
+
+ # ELIMINAR PRODUCTO ENERGIA
+
+class Eliminar_EnergiaDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Energia.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_EnergiaDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('energia')
+
+# ELIMINAR PRODUCTO HOGAR
+
+class Eliminar_HogarDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Hogar.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_HogarDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('hogar')
+
+# ELIMINAR PRODUCTO ILUMINACION
+
+class Eliminar_IluminacionDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Iluminacion.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_IluminacionDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('iluminacion')
+
+# ELIMINAR PRODUCTO MODULOS
+
+class Eliminar_ModulosDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Modulos.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_ModulosDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('modulos')
+
+# ELIMINAR PRODUCTO MULTIMEDIA
+class Eliminar_MultimediaDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Multimedia.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_MultimediaDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('multimedia')
+
+
+# ELIMINAR PRODUCTO OCIO
+
+class Eliminar_OcioDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Ocio.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_OcioDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('ocio')
+
+
+# ELIMINAR PRODUCTO SEGURIDAD
+
+class Eliminar_SeguridadDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Seguridad.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_SeguridadDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('seguridad')
+
+
+# ELIMINAR PRODUCTO SONIDO
+
+class Eliminar_SonidoDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Sonido.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_SonidoDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('sonido')
+
+# ELIMINAR PRODUCTO CONECTORES
+
+class Eliminar_ConectoresDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Conectores.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_ConectoresDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('conectores')
+
+# ELIMINAR PRODUCTO AUTOMOVIL
+
+class Eliminar_AutomovilDeleteView(DeleteView):
+    model = Producto
+    form_class= ProductoForm
+    template_name = 'Eliminar_Automovil.html'
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_AutomovilDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     producto = Producto.objects.get(id=pk)
+     context.update({'producto': producto})
+     return context
+
+    def get_success_url(self):
+        return reverse('automovil')
+
+
+

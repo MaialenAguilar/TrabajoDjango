@@ -22,7 +22,7 @@
 			<td class="primera" > {{ d.referencia }}</td>
 			<td class="segunda">{{ d.nombre}}</td>
 			<td class="tercera"><a href="/appGestionPedidos/productos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			<td class="cuarta"><a href="/appGestionPedidos/modulos/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 		</tr>
 		{% endfor %}
 		</tbody>
