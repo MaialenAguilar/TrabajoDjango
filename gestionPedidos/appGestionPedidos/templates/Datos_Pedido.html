@@ -22,7 +22,7 @@
         </li>
          <li>
              <label class="cabecera">Producto :</label>
-            {{pedido.producto}}
+             {{ pedido.producto.all|join:", " }}
         </li>
          <li>
              <label class="cabecera">Cantidad :</label>
@@ -42,7 +42,7 @@
         </li>
         <li>
              <label class="cabecera">Importe Total :</label>
-            {{pedido.precio_total}}
+            {{pedido.precio}}
         </li>
     </ul>
 {% else %}

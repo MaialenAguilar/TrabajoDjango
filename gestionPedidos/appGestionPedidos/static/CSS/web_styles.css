@@ -135,8 +135,8 @@ fieldset {
 	margin-left: 30px;
 	width: 300px;
 }
-.fecha {
-    width: 30%;
+#fecha {
+    width: 100px;
 }
 /*Estilo para los radio-buttons*/
 .radio {

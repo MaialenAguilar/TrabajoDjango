@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Cliente(models.Model):
     cif = models.CharField(max_length=10)
@@ -15,20 +16,21 @@ class Cliente(models.Model):
     def __str__(self):
         return f'{self.nombre_empresa}'
 
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=60)
+
     def __str__(self):
         return f'{self.nombre}'
+
 
 class Componente(models.Model):
     codigo_referencia = models.CharField(max_length=10)
     nombre = models.CharField(max_length=120)
     marca = models.CharField(max_length=80)
 
-
     def __str__(self):
         return f'{self.codigo_referencia}--> {self.nombre}'
-
 
 
 class Producto(models.Model):
@@ -42,19 +44,19 @@ class Producto(models.Model):
     def __str__(self):
         return f'{self.nombre}--> {self.categoria}'
 
+
 class Pedido(models.Model):
     identificador = models.CharField(max_length=10)
     fecha_pedido = models.DateField()
-    entregado =models.BooleanField(default=False)
+    entregado = models.BooleanField(default=False)
     fecha_entrega = models.DateField()
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     producto = models.ManyToManyField(Producto)
     cantidad = models.IntegerField()
     base_imponible = models.FloatField()
     iva = models.IntegerField(default=21)
-    precio_total = models.FloatField()
 
+    def _get_precio(self):
+        return self.base_imponible * (self.iva / 100) + self.base_imponible
 
-
-    
-
+    precio = property(_get_precio)

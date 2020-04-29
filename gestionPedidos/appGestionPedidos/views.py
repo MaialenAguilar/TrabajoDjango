@@ -285,19 +285,10 @@ class CrearPedidoView(View):
     def post(self, request, *args, **kwargs):
         form = PedidoForm(request.POST)
         if form.is_valid():
-            # pedido = Pedido()
-            # pedido.fecha_pedido = form.cleaned_data['fecha_pedido']
-            # pedido.entregado = form.cleaned_data['entregado']
-            # pedido.fecha_entrega = form.cleaned_data['fecha_entrega']
-            # pedido.cliente = form.cleaned_data['cliente']
-            # pedido.cantidad = form.cleaned_data['cantidad']
-            # pedido.iva = form.cleaned_data['iva']
-            # pedido.precio_total = form.cleaned_data['precio_total']
-            # pedido.save()
 
             form.save()
 
-            # Volvemos a la lista de noticias
+            # Volvemos a la lista de pedidos
             return redirect('pedidos')
 
         return render(request, 'Crear_Pedido.html', {'form': form})
@@ -321,7 +312,7 @@ class CrearProductoView(View):
             form.save()
 
             # Volvemos a la lista de productos
-            return redirect('productos')
+            return redirect('categorias')
 
         return render(request, 'Insertar_Producto.html', {'form': form})
 
