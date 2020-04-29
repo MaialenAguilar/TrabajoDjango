@@ -369,13 +369,29 @@ class Eliminar_ClientesDeleteView(DeleteView):
     def get_success_url(self):
         return reverse('clientes')
 
+#ELIMINAR PEDIDO
 
+class Eliminar_PedidoDeleteView(DeleteView):
+    model = Pedido
+    form_class = PedidoForm
+    template_name = 'Eliminar_Pedido.html'
+
+
+    def get_context_data(self, **kwargs):
+     context = super(Eliminar_PedidoDeleteView, self).get_context_data(**kwargs)
+     pk= self.kwargs.get('pk')
+     pedido = Pedido.objects.get(id=pk)
+     context.update({'pedidos': pedido})
+     return context
+
+    def get_success_url(self):
+        return reverse('pedidos')
 
  # ELIMINAR PRODUCTO ENERGIA
 
 class Eliminar_EnergiaDeleteView(DeleteView):
     model = Producto
-    form_class= ProductoForm
+    form_class = ProductoForm
     template_name = 'Eliminar_Energia.html'
 
     def get_context_data(self, **kwargs):

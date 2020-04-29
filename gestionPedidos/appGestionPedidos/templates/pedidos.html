@@ -24,7 +24,7 @@
 			<td class="segunda">{{ d.cliente}}</td>
             <td class="tercera">{{ d.entregado}}</td>
 			<td class="tercera"><a href="/appGestionPedidos/pedidos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			<td class="cuarta"><a href="/appGestionPedidos/pedidos/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 		</tr>
 		{% endfor %}
 		</tbody>

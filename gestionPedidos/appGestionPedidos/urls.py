@@ -50,11 +50,6 @@ urlpatterns = [
     path('sonido/delete/<int:pk>/', views.Eliminar_SonidoDeleteView.as_view(), name='Eliminar_Sonido'),
     path('conectores/delete/<int:pk>/', views.Eliminar_ConectoresDeleteView.as_view(), name='Eliminar_Conectores'),
     path('automovil/delete/<int:pk>/', views.Eliminar_AutomovilDeleteView.as_view(), name='Eliminar_Automovil'),
-
-
-
-
-
-
+    path('pedidos/delete/<int:pk>/', views.Eliminar_PedidoDeleteView.as_view(), name='Eliminar_Pedido')
 
 ]
