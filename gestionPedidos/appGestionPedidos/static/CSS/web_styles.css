@@ -135,8 +135,9 @@ fieldset {
 	margin-left: 30px;
 	width: 300px;
 }
-#fecha {
-    width: 100px;
+/*Utilizamos el id automatico que pone al crear el formulario para darle altura a la selección de componentes*/
+#id_componentes {
+    height: 100px;
 }
 /*Estilo para los radio-buttons*/
 .radio {

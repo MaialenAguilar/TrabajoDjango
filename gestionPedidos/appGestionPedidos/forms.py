@@ -26,12 +26,17 @@ class ProductoForm(ModelForm):
     class Meta:
         model = Producto
         fields = '__all__'
+         #Establecemos el formato de input que deseamos
+        widgets = {
+            'componentes': forms.SelectMultiple()
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields:
             # Recorremos todos los campos del modelo para añadirle class="form-control
             self.fields[field].widget.attrs.update({'class': 'form-control'})
+
 
 class PedidoForm(ModelForm):
     class Meta:

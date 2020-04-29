@@ -30,7 +30,7 @@
         </li>
         <li>
             <label class="cabecera">Componentes :</label>
-            {{producto.componentes}}
+            {{producto.componentes.all|join:", "}}
         </li>
     </ul>
 {% else %}
