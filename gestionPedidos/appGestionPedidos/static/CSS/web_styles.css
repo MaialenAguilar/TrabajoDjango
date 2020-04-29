@@ -139,6 +139,13 @@ fieldset {
 #id_componentes {
     height: 100px;
 }
+/*Utilizamos los id de mes, día y año para dar formato a las fechas*/
+#id_fecha_pedido_day, #id_fecha_pedido_year, #id_fecha_entrega_day, #id_fecha_entrega_year {
+    width : 70px;
+}
+#id_fecha_pedido_month, #id_fecha_entrega_month {
+    width: 100px;
+}
 /*Estilo para los radio-buttons*/
 .radio {
 	width: 20px;

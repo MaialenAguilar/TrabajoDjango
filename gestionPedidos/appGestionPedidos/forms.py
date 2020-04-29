@@ -44,9 +44,8 @@ class PedidoForm(ModelForm):
         fields = '__all__'
         #Establecemos el formato de input que deseamos
         widgets = {
-            'fecha_pedido': forms.SelectDateWidget(attrs={
-                #Añadimos una clase para darle estilo
-                'class': 'fecha'}),
+            'fecha_pedido': forms.SelectDateWidget,
+            'fecha_entrega': forms.SelectDateWidget
         }
 
 
