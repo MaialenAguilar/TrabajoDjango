@@ -1,3 +1,4 @@
+import self as self
 from django.db import models
 
 
@@ -55,8 +56,4 @@ class Pedido(models.Model):
     cantidad = models.IntegerField()
     base_imponible = models.FloatField()
     iva = models.IntegerField(default=21)
-
-    def _get_precio(self):
-        return self.base_imponible * (self.iva / 100) + self.base_imponible
-
-    precio = property(_get_precio)
+    precio = models.FloatField()

@@ -45,7 +45,8 @@ class PedidoForm(ModelForm):
         #Establecemos el formato de input que deseamos
         widgets = {
             'fecha_pedido': forms.SelectDateWidget,
-            'fecha_entrega': forms.SelectDateWidget
+            'fecha_entrega': forms.SelectDateWidget,
+            'producto': forms.SelectMultiple()
         }
 
 

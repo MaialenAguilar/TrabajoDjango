@@ -136,7 +136,7 @@ fieldset {
 	width: 300px;
 }
 /*Utilizamos el id automatico que pone al crear el formulario para darle altura a la selección de componentes*/
-#id_componentes {
+#id_componentes, #id_producto {
     height: 100px;
 }
 /*Utilizamos los id de mes, día y año para dar formato a las fechas*/
