@@ -357,6 +357,7 @@ class ProductosListView(ListView):
         return context
 
 
+<<<<<<< Updated upstream
 # BORRA CLIENTE
 
 
@@ -571,3 +572,5 @@ class Eliminar_AutomovilDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('automovil')
+=======
+>>>>>>> Stashed changes
