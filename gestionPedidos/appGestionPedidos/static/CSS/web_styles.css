@@ -30,22 +30,7 @@ h1 {
 	padding-left: 20px;
 	vertical-align: bottom;
 }
-.login {
-	display: inline;
-	margin-left: 80px;
-	vertical-align: text-bottom;
-}
-/*Estilo para el enlace "identificate"*/
-.login  a {
-	color: #023560;
-	font-family: Lato, "sans-serif";
-	font-size: 18px;
-	font-weight: 500;
-	letter-spacing: 1px;
-	text-decoration: none;
-	vertical-align: middle;
 
-}
 /*Definimos el estilo de los elementos que componen el pie de página*/
 footer {
 	background-color: white;
@@ -94,18 +79,7 @@ main {
 
 }
 
-/*Definimos el estilo general del formulario de registro*/
-.form-registro {
-	background-color: #cee5ee;
-	box-sizing: border-box;
-	font-family: "Verdana";
-	margin-top: 20px;
-	margin-left: 11px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	width: 100%;
-}
-/*Estilo de los títulos del formulario de registro*/
+/*Estilo de los títulos de la vistas*/
 .titulos {
 	background-color: #023560;
 	color: white;
@@ -238,16 +212,6 @@ p a {
 	width: 70%
 
 }
-/*Estilo general para los bloques denominados "articulo"*/
-.articulo{
-	background-color: #cee5ee;
-	box-sizing: border-box;
-	margin-left: 12px;
-	padding-bottom: 15px;
-	width: 100%;
-
-}
-
 
 h2, h2 a {
 	

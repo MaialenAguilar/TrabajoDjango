@@ -11,6 +11,7 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('', views.home, name='home'),
     path('clientes/', views.ClientesListView.as_view(), name='clientes'),
+    path('clientes?orden=id/', views.ClientesListView_Id.as_view(), name='clientes_Id'),
     # path('clientes/<int:cliente_id>/', views.detalle_cliente, name='detalle_cliente'),
     path('clientes/<int:pk>/', views.Detalle_ClienteDetailView.as_view(), name='detalle_cliente'),
     # path('componentes/', views.componentes, name='componentes'),

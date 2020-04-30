@@ -6,27 +6,40 @@
 {% block main %}
 <h2 class = "titulos">Listado de clientes</h2>
 
-	<div class = "tabla">
-	<table class="table_clientes">
+<!--El filtro con los radio-buttons lo metemos en un formulario-->
+<form action="{% url 'clientes' %}" method="get">
+	<input class ="radio" type = 'radio'  name="orden" value="nombre" checked> Por nombre
+	<input class ="radio" type = 'radio'  name="orden" value="id"> Por Id
+	<input class = "boton" type="submit" value="Ordenar" />
+</form>
+
+<div class = "tabla">
+
+	<!--Tabla para mostrar el listado de clientes-->
+	<table>
+		<!--Títulos de la tabla-->
 		<thead>
-		<tr>
-			<th class="primera-titulo">ID</th>
-			<th class="segunda-titulo">Nombre de la empresa</th>
-			<th class="tercera-titulo">Visualizar cliente</th>
-			<th class="cuarta-titulo">Eliminar</th>
-		</tr>
+			<tr>
+				<th class="primera-titulo">ID</th>
+				<th class="segunda-titulo">Nombre de la empresa</th>
+				<th class="tercera-titulo">Visualizar cliente</th>
+				<th class="cuarta-titulo">Eliminar</th>
+			</tr>
 		</thead>
+		<!--Datos de la tabla. Recorremos el listado de clientes mediante un for para mostrarlos todos-->
 		<tbody>
-		{% for d in lista_clientes %}
-		<tr>
-			<td class="primera" > {{ d.id }}</td>
-			<td class="segunda">{{ d.nombre_empresa}}</td>
-			<td class="tercera"><a href="/appGestionPedidos/clientes/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-			<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-		</tr>
-		{% endfor %}
+			{% for d in lista_clientes %}
+			<tr>
+				<td class="primera" > {{ d.id }}</td>
+				<td class="segunda">{{ d.nombre_empresa}}</td>
+				<td class="tercera"><a href="/appGestionPedidos/clientes/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+				<td class="cuarta"><a href="/appGestionPedidos/clientes/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			</tr>
+			{% endfor %}
 		</tbody>
 	</table>
-	</div>
-	<a class="crear" href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
+</div>
+
+<!--Botón de navegación que nos abrirá el formulario para crear un nuevo cliente-->
+<a class="crear" href="{% url 'Añadir_Cliente' %}"><button class ="boton" name="boton">Crear Cliente</button> </a>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm, Widget
 from .models import Cliente, Categoria, Producto, Componente, Pedido
+
 class ClienteForm(ModelForm):
     class Meta:
         model = Cliente

@@ -6,30 +6,36 @@
 {% block main %}
 <h2 class = "titulos">Listado de Pedidos</h2>
 
-	<div class = "tabla">
+<div class = "tabla">
+
+	<!--Tabla para mostrar el listado de pedidos-->
 	<table>
+		<!--Títulos de la tabla-->
 		<thead>
-		<tr>
-			<th class="primera-titulo">ID</th>
-			<th class="segunda-titulo">Cliente</th>
-            <th class="tercera-titulo">Entregado</th>
-			<th class="tercera-titulo">Visualizar Pedido</th>
-			<th class="cuarta-titulo">Eliminar</th>
-		</tr>
+			<tr>
+				<th class="primera-titulo">ID</th>
+				<th class="segunda-titulo">Cliente</th>
+            	<th class="tercera-titulo">Entregado</th>
+				<th class="tercera-titulo">Visualizar Pedido</th>
+				<th class="cuarta-titulo">Eliminar</th>
+			</tr>
 		</thead>
+		<!--Datos de la tabla.Recorremos el listado de pedidos mediante un for para mostrarlos todos-->
 		<tbody>
-		{% for d in lista_pedidos %}
-		<tr>
-			<td class="primera" > {{ d.id }}</td>
-			<td class="segunda">{{ d.cliente}}</td>
-            <td class="tercera">{{ d.entregado}}</td>
-			<td class="tercera"><a href="/appGestionPedidos/pedidos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-			<td class="cuarta"><a href="/appGestionPedidos/pedidos/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
-		</tr>
-		{% endfor %}
+			{% for d in lista_pedidos %}
+			<tr>
+				<td class="primera" > {{ d.id }}</td>
+				<td class="segunda">{{ d.cliente}}</td>
+            	<td class="tercera">{{ d.entregado}}</td>
+				<td class="tercera"><a href="/appGestionPedidos/pedidos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+				<td class="cuarta"><a href="/appGestionPedidos/pedidos/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
+			</tr>
+			{% endfor %}
 		</tbody>
 	</table>
-	</div>
-	<a class="crear" href="{% url 'crear_pedido' %}"><button class ="boton" name="boton">Crear Pedido</button> </a>
+</div>
+
+<!--Botón de navegación que nos abrirá el formulario para crear un nuevo pedido-->
+<a class="crear" href="{% url 'crear_pedido' %}"><button class ="boton" name="boton">Crear Pedido</button> </a>
 {% endblock %}
 
