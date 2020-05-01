@@ -1,29 +1,22 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="es"><!--Establecemos idioma castellano por accesibilidad-->
+	<head>
+		<link rel="stylesheet" href="{% static 'CSS/web_styles.css' %}"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
+		<meta name="description" content="Aplicación de Deustronics Components S.L. par la Gestión de Pedidos">
+		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
+	</head>
 
-{% block titulo %}Logeo{% endblock %}
 
-{% block main %}
-   <div id="video-container">
-  <video src="{% static 'Tubos.mp4' %}" id="video_login" autoplay muted></video>
-</div>
-<div class="login-wrapper">
-  <h2>Iniciar sesión</h2>
-  <form action="{%url 'do_login'%}" method="POST">
-    {%csrf_token%} {{login.as_p}}
-    <input type="submit" value="Iniciar Sesión" />
-  </form>
+    <body>
+      <div class="login-wrapper">
 
-  <div class="dropdown-divider"></div>
+        <form class = "form-login" action="{%url 'do_login'%}" method="POST">
+            {%csrf_token%} {{login.as_p}}
+           <input id = "boton-login" type="submit" value="Iniciar Sesión" />
+        </form>
 
-  <h2>Registrarse</h2>
-  <form action="{%url 'do_register'%}" method="POST">
-    {%csrf_token%}
-    <label for="">Usuario: </label>{{form.username}} <br />
-    <label for="">Contraseña: </label><input type="password" name="password2" /> <br />
-    <label for="">Repite la contraseña: </label><input type="password" name="password1" /> <br />
-    <label for="">Nombre empresa: </label><input type="text" name="empresa" /> <br />
-    <input type="submit" value="Registrarse" />
-  </form>
-</div>
-{% endblock %}
+      </div>
+    </body>
+
+

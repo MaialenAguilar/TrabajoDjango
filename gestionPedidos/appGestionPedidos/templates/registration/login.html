@@ -7,17 +7,17 @@
 		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
 	</head>
     <body>
-        <div class="contenedor-login" method="POST" action="{% url 'login' %}">
+        <div class="contenedor-login" method="POST" action="{% url 'do_login' %}">
             <form class="form-login">
                 {% csrf_token %}
-
-                {{ form.username.label_tag }}
+                {{login.as_p}}
+               <!-- {{ form.username.label_tag }}
                 {{ form.username }}
 
                 {{ form.password.label_tag }}
                 {{ form.password }}
 
-                {{ form.errors }}
+                {{ form.errors }}-->
 
                 <input id="boton-login" type="submit" value="Login">
 

@@ -34,7 +34,8 @@ def do_login(req):
         print(req.GET)
         return redirect('home')
     else:
-        print('mal')
+
+        print("El nombre de usuario o la contraseña son incorrectos. Vuelva a intentarlo")
         return redirect('get_login')
 
  # -Funcion para hacer el logout
@@ -77,28 +78,9 @@ class ClientesListView(ListView):
     #queryset = Cliente.objects.order_by('nombre_empresa')
     context_object_name = 'lista_clientes'
 
-    def get_queryset(self):
-        return super(ClientesListView, self).get_queryset().order_by(
-            device_id=self.kwargs['device']
-        )
-
 
     def get_context_data(self, **kwargs):
         context = super(ClientesListView, self).get_context_data(**kwargs)
-        context['Titulo_pagina'] = 'Listado de clientes'
-        return context
-
-
-# VISTA LISTADO DE CLIENTES ORDENADOS POR ID
-
-class ClientesListView_Id(ListView):
-    model = Cliente
-    template_name = 'clientes.html'
-    queryset = Cliente.objects.order_by('id')
-    context_object_name = 'lista_clientes'
-
-    def get_context_data(self, **kwargs):
-        context = super(ClientesListView_Id, self).get_context_data(**kwargs)
         context['Titulo_pagina'] = 'Listado de clientes'
         return context
 
