@@ -57,3 +57,7 @@ class Pedido(models.Model):
     base_imponible = models.FloatField()
     iva = models.IntegerField(default=21)
     precio = models.FloatField()
+
+
+    def __str__(self):
+        return f'{self.entregado}--> {self.cliente}'
