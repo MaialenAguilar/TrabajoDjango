@@ -30,6 +30,20 @@ h1 {
 	padding-left: 20px;
 	vertical-align: bottom;
 }
+.conten_salir{
+    float:right;
+    margin-left: 50px;
+    display: inline-block;
+}
+.usuario_activo{
+    line-height:30px;
+
+
+}
+.label_usuario{
+     float:right;
+     margin-right:55px;
+}
 
 /*Definimos el estilo de los elementos que componen el pie de página*/
 footer {
@@ -404,7 +418,6 @@ tbody, table {
     font-weight: Bold;
     width: 200px;
 }
-
 
 
 

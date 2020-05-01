@@ -12,12 +12,16 @@
 
 			<img id="logo" src="{% static 'IMG/LOGOS/logo-deusto.png' %}" width="80px" height="100px" alt="Logo de Deusto">
 			<h1>DEUSTRONICS COMPONENTS</h1>
-			<div class="login">
-				 <li class="nav-item">
-         			 <a class="nav-link" href="{%url 'logout' %}"><img class="user-type-icon" src="{%static 'icons/Operario.png'%}"
-            			  alt=""><span> Cerrar sesión </span></a>
-       			 </li>
+
+			<div class="conten_salir">
+				<div class="usuario_activo">
+					<img src="{%static 'IMG/LOGOS/icono_usuario.png'%}" width="40px" height="40px" alt=""><label class="label_usuario">{{user.get_username}} </label>
+				</div>
+				<div class="salir">
+					<a href="{%url 'logout' %}"><img src="{%static 'IMG/LOGOS/log_out.jpg'%}" width="40px" height="40px" alt=""></a>
+				</div>
 			</div>
+
 		</header>
 		<!--Definimos un espacio principal, en el centro, común para toda la aplicación-->
 		<main>
