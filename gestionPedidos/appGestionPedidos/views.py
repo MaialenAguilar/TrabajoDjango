@@ -1,3 +1,5 @@
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User, Group
 from django.urls import reverse
 
 from .models import Cliente, Componente, Categoria, Producto, Pedido
@@ -7,14 +9,65 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, DeleteView, FormView, TemplateView, RedirectView
 from django.views import View
-from .forms import PedidoForm, ProductoForm, ClienteForm
+from .forms import PedidoForm, ProductoForm, ClienteForm, RegisterForm, LoginForm
 
 
 # DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
 
 def home(request):
     return render(request, 'home.html')
+# SESIONEs================================================
+# -Pagina de login
+def get_login(req):
+    context = {'form': RegisterForm, 'login': LoginForm}
+    return render(req, "login.html", context)
 
+
+# -Funcion para hacer el login
+def do_login(req):
+    username = req.POST['username']
+    password = req.POST['password']
+    user = authenticate(req, username=username, password=password)
+    if user is not None:
+        login(req, user)
+        print('bien')
+        print(req.GET)
+        return redirect('home')
+    else:
+        print('mal')
+        return redirect('get_login')
+
+ # -Funcion para hacer el logout
+def do_logout(req):
+        logout(req)
+        return redirect('get_login')
+
+    # -Funcion para hacer el registro
+def register(req, CLIENTE=None):
+        form = RegisterForm(req.POST)
+
+        if form.is_valid():
+
+            if form.cleaned_data["password1"] != form.cleaned_data["password2"]:
+                return redirect('get_login')
+
+            usuario = User(username=form.cleaned_data["username"])
+            usuario.set_password(form.cleaned_data["password1"])
+            group = Group.objects.get(name=CLIENTE)
+            usuario.save()
+            usuario.groups.add(group)
+
+            usuario.save()
+            cliente = Cliente(nombre=form.cleaned_data["empresa"])
+            cliente.usuario = usuario
+            cliente.save()
+            user = authenticate(req, username=usuario.username, password=form.cleaned_data["password1"])
+            login(req, user)
+            return redirect('index')
+        else:
+            print("no valido")
+            return redirect('get_login')
+# ==============================================================================
 
 # DEVUELVE EL LISTADO DE CLIENTES
 
@@ -577,3 +630,4 @@ class Eliminar_AutomovilDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('automovil')
+

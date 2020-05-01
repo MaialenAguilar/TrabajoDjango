@@ -57,6 +57,26 @@ class PedidoForm(ModelForm):
             # Recorremos todos los campos del modelo para añadirle class="form-control
             self.fields[field].widget.attrs.update({'class': 'form-control'})
 
+#==================================================
+# Formulario de Registro
+class RegisterForm(forms.Form):
+    username = forms.CharField(max_length=100)
+    password1 = forms.CharField(widget=forms.PasswordInput, required=True)
+    password2 = forms.CharField(widget=forms.PasswordInput, required=True)
+    empresa = forms.CharField(max_length=100)
+
+
+# Formulario de Inicio de Sesion
+class LoginForm(forms.Form):
+    # Usuario
+    username = forms.CharField(max_length=100)
+
+    # Contraseña
+    attrs = {
+        "type": "password"  # Atributo para mostrarlo como contraseña
+    }
+    password = forms.CharField(widget=forms.TextInput(attrs=attrs))
+
 
 
 
