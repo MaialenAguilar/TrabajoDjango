@@ -44,6 +44,10 @@ h1 {
      float:right;
      margin-right:55px;
 }
+.salir{
+    position: relative ;
+    right: 8px;
+}
 
 /*Definimos el estilo de los elementos que componen el pie de página*/
 footer {
