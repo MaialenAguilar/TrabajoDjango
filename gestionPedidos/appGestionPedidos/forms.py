@@ -65,7 +65,6 @@ class RegisterForm(forms.Form):
     password2 = forms.CharField(widget=forms.PasswordInput, required=True)
     empresa = forms.CharField(max_length=100)
 
-
 # Formulario de Inicio de Sesion
 class LoginForm(forms.Form):
     # Usuario
