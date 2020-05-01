@@ -1,4 +1,4 @@
-import self as self
+#import self as self
 from django.db import models
 
 

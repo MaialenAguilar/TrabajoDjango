@@ -4,12 +4,26 @@
 {% block titulo %}Logeo{% endblock %}
 
 {% block main %}
-    <h1>LOGIN</h1>
-    {% if message %}
-    <b>{{message}}</b>
-    {% endif %}
-    <form action="", method="post">{% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit" />
-    </form>
+   <div id="video-container">
+  <video src="{% static 'Tubos.mp4' %}" id="video_login" autoplay muted></video>
+</div>
+<div class="login-wrapper">
+  <h2>Iniciar sesión</h2>
+  <form action="{%url 'do_login'%}" method="POST">
+    {%csrf_token%} {{login.as_p}}
+    <input type="submit" value="Iniciar Sesión" />
+  </form>
+
+  <div class="dropdown-divider"></div>
+
+  <h2>Registrarse</h2>
+  <form action="{%url 'do_register'%}" method="POST">
+    {%csrf_token%}
+    <label for="">Usuario: </label>{{form.username}} <br />
+    <label for="">Contraseña: </label><input type="password" name="password2" /> <br />
+    <label for="">Repite la contraseña: </label><input type="password" name="password1" /> <br />
+    <label for="">Nombre empresa: </label><input type="text" name="empresa" /> <br />
+    <input type="submit" value="Registrarse" />
+  </form>
+</div>
 {% endblock %}
