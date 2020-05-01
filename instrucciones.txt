@@ -1,0 +1,65 @@
+(proyectoColaborativo) C:\Users\Industria 4.0\Desktop\INDUSTRIA DIGITAL\SEGUNDO\SEGUNDO SEMESTRE\INGENIERIA WEB\PROYECTO ENTREGABLE\TrabajoDjango\gestionPedidos>pip freeze
+asgiref==3.2.7
+decorator==4.4.2
+Django==3.0.5
+public==2019.4.13
+pytz==2019.3
+self==2019.4.13
+sqlparse==0.3.1
+
+Instrucciones:
+
+1.- La aplicación se arranca con la url: 127.0.0.1:8000/appGestionPedidos
+    Esta dirección ejecutará la aplicación, que nos mostrará la página de login.
+    Si intentamos acceder a otra url de la aplicación, por ejemplo 127.0.0.1:8000/appGestionPedidos/home, 
+    nos debería dar un error. De esta forma se impide que nadie sin autorización vea la aplicación.
+
+2.- Una vez en la página de login, si no estamos autorizados, o sea, no tenemos usuario y contraseña, no podemos acceder.
+    Para tareas de mantenimiento existe un superuser cuyas credenciales son:
+    username: admin
+    password: admin
+
+3.- Una vez logeados, la aplicación nos llevará a la página "home". Aquí tenemos el menú principal, absolutamente intuitivo.
+    Cada opción del menú nos llevará a un listado visualizado en una tabla, salvo catálogo, que nos mostrará las distintas
+    categorías para poder seleccionar, y entonces nos llevará a la tabla.
+
+4.- Las tablas se han hecho con barra de scroll vertical, para que la navegación sea más amigable.
+
+5.- En cada una de estas ListView, tendremos tres funcionalidades:
+    - Examinar en detalle un elemento, mediante icono
+    - Eliminar un elemento, mediante icono
+    - Crear un elemento, mediante botón.
+
+6.- Al examinar un elemento, nos abrirá un vista DetailView con todos los campos del elemento mostrados en una lista.
+    En esta vista, tenemos dos iconos. Uno nos llevará a la página "home" y otro a la página ListView de nuevo.
+
+7.- En aquellos campos donde pueda haber varios valores, por ejemplo productos y componentes, se mostrarán todos los seleccionados
+    separados por ',', puesto que así está programado: {{ pedido.producto.all|join:", " }}
+
+8.- Cuando seleccionamos eliminar un elemento, aparecerá una vista DeleteView que nos preguntará si realmente queremos eliminarlo.
+    Podemos ejecutar la opción mediante el botón o rechazar mediante el icono de vuelta atrás, que nos llevará de nuevo a la
+    ListView.
+
+9.- Se elegimos crear elemento, nos aparecerá un formulario con los campos vacíos para rellenarlo.
+    Los formularios se crean directamente a partir de los modelos. Sin embargo, hemos hecho algunas mejoras
+    para que se muestren como realmente queremos.
+    En los campos de fecha del formulario de pedidos, hemos añadido el siguiente código:
+    
+    widgets = {
+            'fecha_pedido': forms.SelectDateWidget,
+            'fecha_entrega': forms.SelectDateWidget,
+            'producto': forms.SelectMultiple()
+        }
+
+    Con estos widgets conseguimos que la fecha se nos muestre con tres desplegables, uno de mes, día y año. Mucho más intuitivo
+    que poner la fecha a mano.
+    Con el tercer widget conseguimos que nos muestre una lista con todos los productos, para que podamos seleccionar uno o varios
+    pulsando "Ctrl".
+    En cliente, como sólo se puede seleccionar uno, hemos optado por un select normal.
+
+    Una vez que pulsemos en guardar el formulario, se guardará el elemento en la BBDD y volverá a la ListView.
+
+10.- En la opción "Componentes" del menú sólo se mostrará una ListView con el listado de los componentes. No queremos que ningún
+     usuario esté habilitado para añadir o eliminar ninguno, y no tiene sentido una vista de detalle puesto que los componentes
+     sólo tienen el nombre.
+
