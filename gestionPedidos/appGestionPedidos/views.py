@@ -21,8 +21,14 @@ def home(request):
 class ClientesListView(ListView):
     model = Cliente
     template_name = 'clientes.html'
-    queryset = Cliente.objects.order_by('nombre_empresa')
+    #queryset = Cliente.objects.order_by('nombre_empresa')
     context_object_name = 'lista_clientes'
+
+    def get_queryset(self):
+        return super(ClientesListView, self).get_queryset().order_by(
+            device_id=self.kwargs['device']
+        )
+
 
     def get_context_data(self, **kwargs):
         context = super(ClientesListView, self).get_context_data(**kwargs)
