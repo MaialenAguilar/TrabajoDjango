@@ -7,6 +7,9 @@ pytz==2019.3
 self==2019.4.13
 sqlparse==0.3.1
 
+Repositorio Git:
+github.com/MaialenAguilar/TrabajoDjango.git
+
 Instrucciones:
 
 1.- La aplicación se arranca con la url: 127.0.0.1:8000/appGestionPedidos
