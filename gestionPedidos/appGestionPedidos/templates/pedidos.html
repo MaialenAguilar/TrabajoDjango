@@ -4,6 +4,8 @@
 {% block titulo %}Listado de Pedidos{% endblock %}
 
 {% block main %}
+<!--Sobreescribimos el campo entregado-->
+<script src = "{% static 'JS/javascript.js' %}"></script>
 <h2 class = "titulos">Listado de Pedidos</h2>
 
 <div class = "tabla">
@@ -27,6 +29,7 @@
 				<td class="primera" > {{ d.id }}</td>
 				<td class="segunda">{{ d.cliente}}</td>
             	<td class="tercera">{{ d.entregado}}</td>
+
 				<td class="tercera"><a href="/appGestionPedidos/pedidos/{{ d.id }}"><img src="{% static 'IMG/LOGOS/examinar.jpg' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 				<td class="cuarta"><a href="/appGestionPedidos/pedidos/delete/{{ d.id }}"><img src="{% static 'IMG/LOGOS/borrar.png' %}" width="30px" height="30px" alt="Imagen de volver"></a></td>
 			</tr>

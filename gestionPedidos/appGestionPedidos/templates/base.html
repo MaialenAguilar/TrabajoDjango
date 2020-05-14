@@ -5,8 +5,9 @@
 		<link rel="stylesheet" href="{% static 'CSS/web_styles.css' %}"><!--De esta forma referenciamos nuestro código html a la hoja de estilos CSS-->
 		<meta name="description" content="Aplicación de Deustronics Components S.L. par la Gestión de Pedidos">
 		<title>{% block titulo %}Deustronics Components{% endblock %}</title>
+		<script src = "{% static 'JS/javascript.js' %}"></script>
 	</head>
-	<body>
+	<body onload="cambiarEstado()">
 		<!--Cabecera de la página común para toda la aplicación-->
 		<header>
 
