@@ -7,6 +7,8 @@
 <form action="{% url 'crear_pedido' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <!-- Vamos a referenciar a nuestro archivo JS para sobreescribir el precio total del formulario -->
+    <script src = "{% static 'JS/javascript.js' %}"></script>
     <input class="boton" type="submit" value="Guardar" />
 </form>
 <a id="volver" href="{% url 'pedidos' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
