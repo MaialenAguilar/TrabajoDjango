@@ -55,6 +55,7 @@ urlpatterns = [
     path('sonido/delete/<int:pk>/', login_required(views.Eliminar_SonidoDeleteView.as_view()), name='Eliminar_Sonido'),
     path('conectores/delete/<int:pk>/', login_required(views.Eliminar_ConectoresDeleteView.as_view()), name='Eliminar_Conectores'),
     path('automovil/delete/<int:pk>/', login_required(views.Eliminar_AutomovilDeleteView.as_view()), name='Eliminar_Automovil'),
-    path('pedidos/delete/<int:pk>/', login_required(views.Eliminar_PedidoDeleteView.as_view()), name='Eliminar_Pedido')
+    path('pedidos/delete/<int:pk>/', login_required(views.Eliminar_PedidoDeleteView.as_view()), name='Eliminar_Pedido'),
+    path('PedidosCliente/<int:pk>/', views.PedidosClienteListView.as_view(), name='PedidosCliente'),
 
 ]
