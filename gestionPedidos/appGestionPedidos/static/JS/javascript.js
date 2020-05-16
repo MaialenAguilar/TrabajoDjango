@@ -20,5 +20,18 @@ function cambiarEstado(){
     }
 }
 
+function mostrar () {
+    var im = document.getElementById('imostrar').value;
+    var datos = document.getElementsByClassName('dato');
+    if(im!='')
+      for (var i = 0; i < datos.length; i ++)
+        if(datos[i].textContent.indexOf(im)>-1)//retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.
+          datos[i].style.display="block";
+        else
+          datos[i].style.display="none";
 
+    else
+      for (var i = 0; i < datos.length; i ++)
+        datos[i].style.display="none";
+  }
 

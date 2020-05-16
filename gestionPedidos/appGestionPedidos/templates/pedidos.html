@@ -9,6 +9,9 @@
 <h2 class = "titulos">Listado de Pedidos</h2>
 
 <div class = "tabla">
+	<p>Pendientes o Entregado :</p>
+	<input type="text" placeholder="Selección..." id="imostrar">
+	<button onclick="mostrar()">Mostrar</button>
 
 	<!--Tabla para mostrar el listado de pedidos-->
 	<table>
@@ -25,7 +28,7 @@
 		<!--Datos de la tabla.Recorremos el listado de pedidos mediante un for para mostrarlos todos-->
 		<tbody>
 			{% for d in lista_pedidos %}
-			<tr>
+			<tr class="dato">
 				<td class="primera" > {{ d.id }}</td>
 				<td class="segunda">{{ d.cliente}}</td>
             	<td class="tercera">{{ d.entregado}}</td>
