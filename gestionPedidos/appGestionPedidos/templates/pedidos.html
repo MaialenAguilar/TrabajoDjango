@@ -9,10 +9,15 @@
 <h2 class = "titulos">Listado de Pedidos</h2>
 
 <div class = "tabla">
-	<p>Pendientes o Entregado :</p>
-	<input type="text" placeholder="Selección..." id="imostrar">
-	<button onclick="mostrar()">Mostrar</button>
-
+	<!--Creamos un buscador en la parte superior del bloque principal-->
+	<div class = "buscador">
+		<label id = "etiqueta-buscador">Filtrar por:</label>
+		<select name="text" placeholder="Selección..." id="imostrar" class="form-control">
+			<option>Entregado</option>
+			<option>Pendiente</option>
+		</select>
+		<button id = "boton-buscador" onclick="mostrar()">Mostrar</button>
+	</div>
 	<!--Tabla para mostrar el listado de pedidos-->
 	<table>
 		<!--Títulos de la tabla-->

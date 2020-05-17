@@ -422,6 +422,32 @@ tbody, table {
     font-weight: Bold;
     width: 200px;
 }
+/*Vamos a dar estilo al buscador de la vista de pedidos*/
+.buscador {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+/* Label anterior al select*/
+#etiqueta-buscador {
+    color: #023560;
+	font-family: Verdana;
+	font-size: 16px;
+    width: 100px;
+
+}
+/*Estilo al Select*/
+#imostrar {
+    margin-left: 5px;
+    margin-top: 0px;
+    width: 100px;
+}
+/*Estilo al boton*/
+#boton-buscador {
+    background-color: #023560;
+	border-radius: 6px;
+	color: white;
+	font-size: 14px;
+}
 
 
 
