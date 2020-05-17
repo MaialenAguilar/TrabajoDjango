@@ -448,6 +448,11 @@ tbody, table {
 	color: white;
 	font-size: 14px;
 }
+/*Posición para el botón del historial de pedidos de un cliente*/
+#boton-historial {
+    float: right;
+    margin-right: 150px;
+}
 
 
 

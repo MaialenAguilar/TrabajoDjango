@@ -6,7 +6,11 @@
 {% block main %}
 <h2 class="titulos">Datos Del Cliente</h2>
 
+<!--Botón para acceder al historial de pedidos de este cliente-->
+<button class ="boton" id = "boton-historial" name="historial">Historial Pedidos</button>
+
 {% if cliente %}
+
 <ul class="datos">
 	<li>
 		<label class="cabecera">ID :</label>
@@ -43,7 +47,7 @@
 
 </ul>
 {% else %}
-    <p>Este pedido no existe</p>
+    <p>Este cliente no existe</p>
 {% endif %}
 
 <!-- Botones de navegación de la parte inferior-->

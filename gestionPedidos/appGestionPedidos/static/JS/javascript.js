@@ -23,15 +23,24 @@ function cambiarEstado(){
 function mostrar () {
     var im = document.getElementById('imostrar').value;
     var datos = document.getElementsByClassName('dato');
+    var todos = 'Todos';
     if(im!='')
       for (var i = 0; i < datos.length; i ++)
-        if(datos[i].textContent.indexOf(im)>-1)//retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.
+        if(datos[i].textContent.indexOf(im)>-1) //retorna el primer índice en el que se puede encontrar un elemento dado en el array, ó retorna -1 si el elemento no esta presente.
           datos[i].style.display="block";
+        else if (im == todos)
+          datos[i].style.display="block";
+
         else
           datos[i].style.display="none";
+}
 
-    else
-      for (var i = 0; i < datos.length; i ++)
-        datos[i].style.display="none";
-  }
+//Vamos a utilizar la API fetch para llamar a nuestro servidor desde la vista de un cliente
+let botonHistorial = document.getElementById('boton-historial');
+
+//Añadimos un escuchador de eventos al botón, para poder llamar a la API
+botonHistorial.addEventListener('click', (event) => {
+    cargarDatos()
+    })
+
 
