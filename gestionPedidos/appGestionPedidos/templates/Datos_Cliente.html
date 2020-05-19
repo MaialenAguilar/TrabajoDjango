@@ -10,7 +10,8 @@
 <button class ="boton" id = "boton-historial" name="historial">Historial Pedidos</button>
 
 {% if cliente %}
-
+<!--Creamos un div que no mostraremos para recoger el id del cliente-->
+<div id="id_js">{{ cliente.id }}</div>
 <ul class="datos">
 	<li>
 		<label class="cabecera">ID :</label>
@@ -46,6 +47,11 @@
 	</li>
 
 </ul>
+<!--Creamos un div que mostraremos en un popup cuando el usuario haga click en un botón determinado-->
+<div id="miPopup" class ="tabla">
+	Hola mundo
+</div>
+<script src = "{% static 'JS/fetchAPI.js' %}"></script>
 {% else %}
     <p>Este cliente no existe</p>
 {% endif %}

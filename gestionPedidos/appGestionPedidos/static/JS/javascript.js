@@ -6,7 +6,7 @@ function calcularPrecio(){
     document.getElementById("id_precio").value = base_imponible*(1+ iva/100);
 
 }
-document.getElementById("id_precio").onclick = calcularPrecio;
+
 
 //Vamos a mostrar al usuario si el pedido esta "Pendiente" o "Entregado" en lugar de "True" o "False"
 function cambiarEstado(){
@@ -19,7 +19,7 @@ function cambiarEstado(){
         }
     }
 }
-
+//Creamos una función para que el usuario pueda filtrar si quiere ver los pedidos Pendientes, Entregados o Todos
 function mostrar () {
     var im = document.getElementById('imostrar').value;
     var datos = document.getElementsByClassName('dato');
@@ -34,13 +34,4 @@ function mostrar () {
         else
           datos[i].style.display="none";
 }
-
-//Vamos a utilizar la API fetch para llamar a nuestro servidor desde la vista de un cliente
-let botonHistorial = document.getElementById('boton-historial');
-
-//Añadimos un escuchador de eventos al botón, para poder llamar a la API
-botonHistorial.addEventListener('click', (event) => {
-    cargarDatos()
-    })
-
 

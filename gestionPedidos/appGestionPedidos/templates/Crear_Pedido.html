@@ -9,6 +9,9 @@
     {{ form.as_p }}
     <!-- Vamos a referenciar a nuestro archivo JS para sobreescribir el precio total del formulario -->
     <script src = "{% static 'JS/javascript.js' %}"></script>
+    <script>
+        document.getElementById("id_precio").onclick = calcularPrecio;
+    </script>
 
     <input class="boton" type="submit" value="Guardar" />
 </form>

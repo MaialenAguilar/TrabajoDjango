@@ -409,7 +409,7 @@ class Eliminar_ClientesDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_ClientesDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        cliente = Cliente.objects.get()
+        cliente = Cliente.objects.get(id=pk)
         context.update({'cliente': cliente})
         return context
 
@@ -427,7 +427,7 @@ class Eliminar_PedidoDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_PedidoDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        pedido = Pedido.objects.get()
+        pedido = Pedido.objects.get(id=pk)
         context.update({'pedidos': pedido})
         return context
 
@@ -445,7 +445,7 @@ class Eliminar_EnergiaDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_EnergiaDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -463,7 +463,7 @@ class Eliminar_HogarDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_HogarDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -481,7 +481,7 @@ class Eliminar_IluminacionDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_IluminacionDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -499,7 +499,7 @@ class Eliminar_ModulosDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_ModulosDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -516,7 +516,7 @@ class Eliminar_MultimediaDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_MultimediaDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -534,7 +534,7 @@ class Eliminar_OcioDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_OcioDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -552,7 +552,7 @@ class Eliminar_SeguridadDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_SeguridadDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -570,7 +570,7 @@ class Eliminar_SonidoDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_SonidoDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -588,7 +588,7 @@ class Eliminar_ConectoresDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_ConectoresDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 
@@ -606,7 +606,7 @@ class Eliminar_AutomovilDeleteView(DeleteView):
     def get_context_data(self, **kwargs):
         context = super(Eliminar_AutomovilDeleteView, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk')
-        producto = Producto.objects.get()
+        producto = Producto.objects.get(id=pk)
         context.update({'producto': producto})
         return context
 

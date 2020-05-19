@@ -453,7 +453,10 @@ tbody, table {
     float: right;
     margin-right: 150px;
 }
-
+/*Ocultamos el div que usamos para recoger el id del cliente en la pista Detalle de Cliente*/
+#id_js {
+    display: none;
+}
 
 
 
