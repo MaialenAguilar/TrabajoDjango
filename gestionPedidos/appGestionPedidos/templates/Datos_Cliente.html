@@ -12,7 +12,7 @@
 {% if cliente %}
 <!--Creamos un div que no mostraremos para recoger el id del cliente-->
 <div id="id_js">{{ cliente.id }}</div>
-<ul class="datos">
+<ul id="datos-cliente" class="datos">
 	<li>
 		<label class="cabecera">ID :</label>
 		{{ cliente.id }}
@@ -48,8 +48,11 @@
 
 </ul>
 <!--Creamos un div que mostraremos en un popup cuando el usuario haga click en un botón determinado-->
-<div id="miPopup" class ="tabla">
-	Hola mundo
+<div id="miPopup" class ="popup">
+	<div class="popup-close">x</div>
+	<div id="popup-content">
+
+	</div>
 </div>
 <script src = "{% static 'JS/fetchAPI.js' %}"></script>
 {% else %}

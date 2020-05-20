@@ -340,10 +340,12 @@ h5 {
 #volver {
     padding-top: 30px;
     margin-left: 30px;
+
 }
 #home {
     float: right;
     margin-right: 30px;
+
 }
 /*PARA DAR SCROLL A LAS TABLAS*/
 
@@ -352,10 +354,14 @@ h5 {
 
 td, th {
     border: 1px solid #023560;
-    color: #023560;
     font-family: Verdana;
     padding: 0.3em;
-    text-align: left;
+
+
+}
+.tabla-entidad {
+     color: #023560;
+     text-align: left;
 
 }
 th {
@@ -365,7 +371,7 @@ td {
     font-size: 16px;
 }
 tr {
-style: border-collapse;
+    style: border-collapse;
 }
 
 .tabla_componentes{
@@ -457,7 +463,43 @@ tbody, table {
 #id_js {
     display: none;
 }
+/*Damos estilo a la tabla del popup*/
+.popup {
+    display: inline;
+    margin-right: 40px;
+    vertical-align: middle;
+}
 
+#popup-content {
+    background-color: #023560;
+    border-radius: 16px;
+    color: white;
+    margin-left: 420px;
+    margin-top: 20px;
+    max-height: 250px;
+    max-width: 350px;
+    position: absolute;
+    top: 300px;
+    left: 385px;
+}
+.tabla-popup-primera, .tabla-popup-segunda, .tabla-popup-tercera, .tabla-popup-cuarta {
+    font-size: 14px;
+    text-align: center;
+
+}
+.tabla-popup-segunda {
+    width: 120px;
+}
+.tabla-popup-tercera {
+    width: 50px;
+}
+.tabla-popup-cuarta {
+    width: 90px;
+}
+.tabla-popup {
+    max-height: 250px:
+    padding-top: 15px;
+}
 
 
 /* sample width and horizontal scroll bar */

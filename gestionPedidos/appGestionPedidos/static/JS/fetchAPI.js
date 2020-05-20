@@ -19,7 +19,7 @@ function cargarDatos(){
             //Mostramos por consola para probar que carga bien
             console.log(json);
             //Seleccionamos el div que hemos creado
-            let div = document.getElementById('miPopup');
+            let div = document.getElementById('popup-content');
             let tabla = crearTabla(json); // Devuelve la tabla para insertar en el DIV
             div.innerHTML=''; //Borramos el contenido del div por si tuviera algo
             div.innerHTML = tabla; //Insertamos la tabla en el div
@@ -32,16 +32,16 @@ function cargarDatos(){
 function crearLineaTabla(id, fecha, estado, importe){
     return `
         <tr>
-            <td>${id}</td>
-            <td>${fecha}</td>
-            <td>${estado}</td>
-            <td>${importe}</td>
+            <td class="tabla-popup-primera">${id}</td>
+            <td class="tabla-popup-segunda">${fecha}</td>
+            <td class="tabla-popup-tercera">${estado}</td>
+            <td class="tabla-popup-cuarta">${importe}</td>
         </tr>`;
 }
 
 function crearTabla(json) {
     let tabla = `
-        <table>
+        <table class="tabla-popup">
             <thead>
                 <tr>
                     <td>Id</td>
