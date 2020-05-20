@@ -41,6 +41,7 @@ function crearLineaTabla(id, fecha, estado, importe){
 
 function crearTabla(json) {
     let tabla = `
+        <div class="popup-close" id="popup-close" onclick="cerrarPopup()">x</div>
         <table class="tabla-popup">
             <thead>
                 <tr>
@@ -60,6 +61,14 @@ function crearTabla(json) {
     tabla += '</tbody></table>'
     return tabla;
 }
+// Creamos una función para cerrar el popup desde la X en la parte superior de la tabla
+function cerrarPopup(){
+    let popup = document.getElementById('popup-content');
+
+    popup.style.display = 'none';
+
+}
+
 
 
 

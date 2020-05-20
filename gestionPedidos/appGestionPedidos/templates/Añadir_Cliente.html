@@ -4,11 +4,13 @@
 {% block main %}
 <h2 class = "titulos">Crear Cliente</h2>
 
-<form action="{% url 'Añadir_Cliente' %}" method="post">
+<form action="{% url 'Añadir_Cliente' %}" method="post" id="formulario">
     {% csrf_token %}
     {{ form.as_p }}
-    <input class = "boton" type="submit" value="Guardar" />
+    <input class = "boton" type="submit" value="Guardar" id="guardar" />
 </form>
+<script src = "{% static 'JS/Form.js' %}"></script>
+
 <a id="volver" href="{% url 'clientes' %}"><img src="{% static 'IMG/LOGOS/boton-volver.jpg' %}" width="30px" height="30px" alt="Imagen de volver atrás"></a>
 <a id="home" href = "{% url 'home' %}"><img src="{% static 'IMG/LOGOS/home.png' %}" width="40px" height="40px" alt="Imagen de home"></a>
 {% endblock %}

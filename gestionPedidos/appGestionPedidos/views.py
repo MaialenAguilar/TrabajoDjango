@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, Group
+from django.forms import model_to_dict
 from django.urls import reverse
 
 from .models import Cliente, Componente, Categoria, Producto, Pedido
@@ -10,6 +11,8 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, DeleteView, FormView, TemplateView, RedirectView
 from django.views import View
 from .forms import PedidoForm, ProductoForm, ClienteForm, RegisterForm, LoginForm
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 
 # DEVUELVE UNA PANTALLA ESTATICA QUE ES LA DE INICIO
@@ -365,7 +368,7 @@ class CrearProductoView(View):
 
 
 # AÑADIR CLIENTE NUEVO
-
+@method_decorator(csrf_exempt, name='dispatch')
 class CrearClienteView(View):
     def get(self, request, *args, **kwargs):
         form = ClienteForm()
@@ -375,15 +378,28 @@ class CrearClienteView(View):
         }
         return render(request, 'Añadir_Cliente.html', context)
 
-    def post(self, request, *args, **kwargs):
-        form = ClienteForm(request.POST)
-        if form.is_valid():
-            form.save()
+    def post(self,request):
+        cliente=Cliente()
+        cliente.cif=request.POST['cif']
+        cliente.nombre_empresa=request.POST['nombre_empresa']
+        cliente.direccion=request.POST['direccion']
+        cliente.codigo_postal=request.POST['codigo_postal']
+        cliente.Localidad=request.POST['Localidad']
+        cliente.Provincia=request.POST['Provincia']
+        cliente.telefono=request.POST['telefono']
+        cliente.email=request.POST['email']
+        cliente.persona_contacto=request.POST['persona_contacto']
+        cliente.save()
+        return JsonResponse(model_to_dict(cliente))
+ #   def post(self, request, *args, **kwargs):
+  #      form = ClienteForm(request.POST)
+   #     if form.is_valid():
+    #        form.save()
+#
+ #           # Volvemos a la lista de clientes
+  #          return redirect('clientes')
 
-            # Volvemos a la lista de clientes
-            return redirect('clientes')
-
-        return render(request, 'Añadir_Cliente.html', {'form': form})
+   #     return render(request, 'Añadir_Cliente.html', {'form': form})
 
 
 class ProductosListView(ListView):
