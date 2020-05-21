@@ -54,8 +54,7 @@ formulario.addEventListener('submit',function(e){
 function limpiarFormulario(){
     formulario.reset();
 }
-let guardar = document.getElementById('guardar');
-guardar.addEventListener('click', limpiarFormulario);
+
 
 function crearMensaje(){
     let mensaje = `
@@ -66,6 +65,7 @@ function crearMensaje(){
 }
 function cerrarPopup(){
     let popup = document.getElementById('mensaje-content');
+    limpiarFormulario();
 
     popup.style.display = 'none';
 
@@ -76,7 +76,10 @@ function mostrarMensaje(){
     let mensaje = crearMensaje(); // Devuelve el mensaje para insertar en el DIV
     div.innerHTML=''; //Borramos el contenido del div por si tuviera algo
     div.innerHTML = mensaje; //Insertamos el mensaje en el div
+
 }
 guardar.addEventListener('click', mostrarMensaje);
+
+
 
 
