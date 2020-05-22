@@ -39,12 +39,12 @@ def do_login(req):
     else:
 
         print("El nombre de usuario o la contraseña son incorrectos. Vuelva a intentarlo")
-        return redirect('get_login')
+        return redirect('nuestro_login')
 
  # -Funcion para hacer el logout
 def do_logout(req):
         logout(req)
-        return redirect('get_login')
+        return redirect('nuestro_login')
 
     # -Funcion para hacer el registro
 def register(req, CLIENTE=None):

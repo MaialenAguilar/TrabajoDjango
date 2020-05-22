@@ -13,7 +13,7 @@ urlpatterns = [
     path('logout/', views.do_logout, name='logout'),
     path('dologin/', views.do_login, name='do_login'),
  #______________________________________________________-
-    path('', views.get_login, name='get_login'),
+    path('', views.get_login, name='nuestro_login'),
     path('home/', login_required(views.home), name='home'),
     path('clientes/', login_required(views.ClientesListView.as_view()), name='clientes'),
     # path('clientes/<int:cliente_id>/', views.detalle_cliente, name='detalle_cliente'),
